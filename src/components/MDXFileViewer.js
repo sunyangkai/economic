@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 // 导入 MDX 文件 - 这些文件可以直接在 IDE 中编辑
 import BasicSyntax from '../documents/BasicSyntax.mdx';
 import ChartsAndComponents from '../documents/ChartsAndComponents.mdx';
+import Macroeconomy from '../documents/Macroeconomy.mdx';
 
 // 导入图表组件供 MDX 使用
 
@@ -21,6 +22,11 @@ const MDXFileViewer = () => {
       component: ChartsAndComponents,
       title: '📊 图表组件与高级功能',
       description: '展示图表组件和 React 交互功能'
+    },
+    'Macroeconomy': {
+      component: Macroeconomy,
+      title: '🌐 宏观经济分析',
+      description: 'GDP、通胀、PMI、贸易与利率概览'
     }
   };
 

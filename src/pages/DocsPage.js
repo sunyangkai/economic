@@ -12,6 +12,11 @@ const DocsPage = () => {
       path: 'charts-and-components',
       title: '📊 图表组件与高级功能',
       description: '展示图表组件和 React 交互功能'
+    },
+    {
+      path: 'macro-economy',
+      title: '🌐 宏观经济分析',
+      description: 'GDP、通胀、PMI、贸易与利率概览'
     }
   ];
 

@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import BasicSyntax from '../documents/BasicSyntax.mdx';
 import ChartsAndComponents from '../documents/ChartsAndComponents.mdx';
+import Macroeconomy from '../documents/Macroeconomy.mdx';
 
 const MDXDocPage = () => {
   const { docId } = useParams();
@@ -18,6 +19,11 @@ const MDXDocPage = () => {
       component: ChartsAndComponents,
       title: '📊 图表组件与高级功能',
       description: '展示图表组件和 React 交互功能'
+    },
+    'macro-economy': {
+      component: Macroeconomy,
+      title: '🌐 宏观经济分析',
+      description: 'GDP、通胀、PMI、贸易与利率概览'
     }
   };
 

@@ -10,6 +10,28 @@ import './components/MDXFileViewer.css';
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
+  const handleRipple = (e) => {
+    try {
+      const target = e.currentTarget;
+      const rect = target.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const span = document.createElement('span');
+      span.className = 'ripple';
+      span.style.left = `${x}px`;
+      span.style.top = `${y}px`;
+      target.appendChild(span);
+      const remove = () => {
+        span.remove();
+      };
+      span.addEventListener('animationend', remove, { once: true });
+      // Fallback removal
+      setTimeout(remove, 650);
+    } catch (_) {
+      // ignore ripple failures silently
+    }
+  };
+
   return (
     <Router>
       <div className="App">
@@ -41,6 +63,7 @@ function App() {
               className={({ isActive }) => isActive ? 'active' : ''}
               end
               title="首页"
+              onClick={handleRipple}
             >
               <span className="nav-icon">🏠</span>
               <span className="nav-text">首页</span>
@@ -49,6 +72,7 @@ function App() {
               to="/dashboard"
               className={({ isActive }) => isActive ? 'active' : ''}
               title="仪表板"
+              onClick={handleRipple}
             >
               <span className="nav-icon">📊</span>
               <span className="nav-text">仪表板</span>
@@ -57,6 +81,7 @@ function App() {
               to="/docs"
               className={({ isActive }) => isActive ? 'active' : ''}
               title="文档"
+              onClick={handleRipple}
             >
               <span className="nav-icon">📝</span>
               <span className="nav-text">文档</span>
