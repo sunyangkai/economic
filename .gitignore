@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Test coverage / caches
+coverage/
+.nyc_output/
+.eslintcache
+.jest/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.test
+.env.production
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc
+.DS_Store?
+.tmp/
+tmp/
+*.pid
+*.seed
+*.tgz
+
+# Static hosting
+.vercel/
+.netlify/
+
