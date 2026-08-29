@@ -54,14 +54,14 @@ import { pathToFileURL } from 'node:url';
  * 3. 程序不负责计算 DP0 = NP_adj,0 + DA0 - MC0 - ΔWC^norm,0
  * 4. company.theta0 由外部分析得到：theta0 = DP0 / NP_adj,0
  * 5. company.thetaX 为成熟阶段或长期阶段兑现系数
- * 6. 过渡期按“第三年增长率线性衰减，终值起点收敛到终局增速”处理
+ * 6. 过渡期统一 3 年（风险补偿，不调整，见估值模型.md“补充说明”）；按“第三年增长率线性衰减，终值起点收敛到终局增速”处理
  *
  * @param {Object} params
  * @param {Object} params.company - 公司层面参数
  * @param {number[]} params.company.growthForecasts - 三年利润增速预测 [g1, g2, g3]
  * @param {number} params.company.theta0 - 当前兑现系数
  * @param {number} params.company.thetaX - 长期兑现系数
- * @param {number} [params.company.transitionYears=3] - 过渡期年数，默认 3 年
+ * @param {number} [params.company.transitionYears=3] - 过渡期年数；模型规定统一 3 年（风险补偿），本参数仅作敏感性实验，研报基准一律用 3
  * @param {number} [params.company.nearTermWeight=0.15] - 前三年权重，默认 15%
  * @param {number} [params.company.longTermWeight=0.85] - 长期权重，默认 85%
  *
