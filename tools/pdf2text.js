@@ -19,7 +19,22 @@
  */
 
 import { writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+
+// pdfjs 加载 PDF 文档参数：传入 cMap（中日韩字体映射）与标准字体数据，
+// 否则嵌入中文字体的官方报告（子集字体 + 自定义编码）会丢失中文。
+function getDocumentParams(pdfPath) {
+  const here = dirname(fileURLToPath(import.meta.url));
+  const pdfjsDir = join(here, '..', 'node_modules', 'pdfjs-dist');
+  return {
+    url: pdfPath,
+    cMapUrl: join(pdfjsDir, 'cmaps') + '/',
+    cMapPacked: true,
+    standardFontDataUrl: join(pdfjsDir, 'standard_fonts') + '/',
+  };
+}
 
 /**
  * 提取 PDF 文本
@@ -31,7 +46,7 @@ import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
  */
 export async function extractPdfText(pdfPath, options = {}) {
   const { pages, pageMarkers = true } = options;
-  const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+  const pdf = await pdfjsLib.getDocument(getDocumentParams(pdfPath)).promise;
   const numPages = pdf.numPages;
 
   let start = 1;
