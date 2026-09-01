@@ -111,7 +111,7 @@
  *     通用(非金融)企业返回 null，可忽略。
  */
 
-import { fetchDataCenter, buildFilter } from './request.js';
+import { fetchDataCenter, buildSecFilter } from './request.js';
 
 /**
  * 查询单只股票的主要财务指标（F10 财务指标）
@@ -133,7 +133,7 @@ export function getStockMainFinanceData(seccode, options = {}) {
     sortOrder = -1,
   } = options;
 
-  const filter = buildFilter({ SECUCODE: seccode, REPORT_TYPE: reportType });
+  const filter = buildSecFilter(seccode, { REPORT_TYPE: reportType });
 
   return fetchDataCenter('RPT_F10_FINANCE_MAINFINADATA', 'APP_F10_MAINFINADATA', {
     filter,

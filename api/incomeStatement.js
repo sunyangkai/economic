@@ -93,7 +93,7 @@
  *     FEE_COMMISSION_INCOME 等）通用(非金融)企业返回 null，可忽略。
  */
 
-import { fetchDataCenter, buildFilter, resolveReportDates } from './request.js';
+import { fetchDataCenter, buildSecFilter, resolveReportDates } from './request.js';
 
 /**
  * 查询单只股票的利润表（支持多个报告期）
@@ -121,8 +121,7 @@ export function getStockIncomeStatement(seccode, options = {}) {
     sortOrder = -1,
   } = options;
 
-  const filter = buildFilter({
-    SECUCODE: seccode,
+  const filter = buildSecFilter(seccode, {
     REPORT_DATE: resolveReportDates({ reportDates, years }),
   });
 

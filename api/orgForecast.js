@@ -43,7 +43,7 @@
  * 注意：YEAR_MARK 标记为 A 的年份是已实现的实际值，E 才是机构预测。
  */
 
-import { fetchReportData, buildFilter } from './request.js';
+import { fetchReportData, buildSecFilter } from './request.js';
 
 /** 机构盈利预测默认返回字段 */
 export const ORG_PREDICT_COLUMNS = [
@@ -76,7 +76,7 @@ export function getOrgForecast(seccode, options = {}) {
   } = options;
 
   return fetchReportData('RPT_HSF10_RES_ORGPREDICT', columns, {
-    filter: buildFilter({ SECUCODE: seccode }),
+    filter: buildSecFilter(seccode),
     pageNumber,
     pageSize,
     ...(sortTypes !== undefined ? { sortTypes } : {}),

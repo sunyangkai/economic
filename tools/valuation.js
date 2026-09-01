@@ -182,7 +182,7 @@ const DEFAULT_MACRO = { rf: 0.018, nominalGdpGrowth: 4 };
 /** 渲染一张 θ 情景表（固定增速、变 θ） */
 function renderThetaTable(table, macro) {
   const { title, growthForecasts, eps, rows, transitionYears = 3 } = table;
-  const header = `| 情景 | θ₀ | θₓ | θ | 内在 PE | 对应股价（2026E EPS ${eps}） |`;
+  const header = `| 情景 | θ₀ | θₓ | θ | 内在 PE | 对应股价（基准年 EPS ${eps}） |`;
   const sep = `| --- | ---: | ---: | ---: | ---: | ---: |`;
   const body = rows
     .map((r) => {
@@ -200,8 +200,8 @@ function renderThetaTable(table, macro) {
 
 /** 渲染一张增速情景表（固定 θ、变增速；行内可覆盖 θ） */
 function renderGrowthTable(table, macro) {
-  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 3 } = table;
-  const header = `| 三年增速（归母口径） | 2026E EPS | 内在 PE | 对应股价 | 相对现价 ${currentPrice} 元 |`;
+  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 3, epsLabel = '2026E EPS' } = table;
+  const header = `| 三年增速（归母口径） | ${epsLabel} | 内在 PE | 对应股价 | 相对现价 ${currentPrice} 元 |`;
   const sep = `| --- | ---: | ---: | ---: | ---: |`;
   const fmtG = (x) => `${(x * 100).toFixed(1).replace(/\.0$/, '')}%`;
   const body = rows

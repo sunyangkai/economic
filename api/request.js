@@ -157,6 +157,22 @@ export function buildFilter(fields) {
 }
 
 /**
+ * 构建证券过滤条件：北交所股票（.BJ / 4、8、9 开头）用 SECURITY_CODE（无后缀），
+ * 其余市场用 SECUCODE（含后缀）——东财财务报表类报表对 BJ 股票仅支持 SECURITY_CODE 过滤。
+ * @param {string} seccode 证券代码，如 "300760.SZ" / "430047.BJ"
+ * @param {object} [extra] 其他过滤字段，如 { REPORT_TYPE: '年报' }
+ * @returns {string} buildFilter 生成的过滤串
+ */
+export function buildSecFilter(seccode, extra = {}) {
+  const raw = String(seccode).trim();
+  const upper = raw.toUpperCase();
+  const bare = raw.replace(/\.\w+$/, '');
+  const isBJ = upper.endsWith('.BJ') || /^[489]/.test(bare);
+  const fields = isBJ ? { SECURITY_CODE: bare, ...extra } : { SECUCODE: raw, ...extra };
+  return buildFilter(fields);
+}
+
+/**
  * 解析报告期列表：优先 years，其次 reportDates，默认最近 N 个年度报告日期
  * @param {object} input { reportDates?, years? }
  * @returns {string[]} 形如 ['2025-12-31','2024-12-31',...]
