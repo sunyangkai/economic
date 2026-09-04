@@ -1,0 +1,697 @@
+[
+ [
+  {
+   "EVENT_TYPE": "融资融券",
+   "SPECIFIC_EVENTTYPE": "融资融券",
+   "NOTICE_DATE": "2026-09-03",
+   "LEVEL1_CONTENT": "融资余额12.47亿，融资净买入额375.6万",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": "eastmoney://page/emrn?id=rzrq&page=SingleStock&type=ggRzrq&code=600809.SH&name=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=rzrq&page=SingleStock&type=ggRzrq&code=600809.SH&name=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  },
+  {
+   "EVENT_TYPE": "融资融券",
+   "SPECIFIC_EVENTTYPE": "融资融券",
+   "NOTICE_DATE": "2026-09-02",
+   "LEVEL1_CONTENT": "融资余额12.43亿，融资净买入额509.7万",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "融资融券",
+   "SPECIFIC_EVENTTYPE": "融资融券",
+   "NOTICE_DATE": "2026-09-01",
+   "LEVEL1_CONTENT": "融资余额12.38亿，融资净买入额-2733万",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "融资融券",
+   "SPECIFIC_EVENTTYPE": "融资融券",
+   "NOTICE_DATE": "2026-08-31",
+   "LEVEL1_CONTENT": "融资余额12.65亿，融资净买入额-1225万",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "融资融券",
+   "SPECIFIC_EVENTTYPE": "融资融券",
+   "NOTICE_DATE": "2026-08-28",
+   "LEVEL1_CONTENT": "融资余额12.77亿，融资净买入额-1936万",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "中报披露",
+   "NOTICE_DATE": "2026-08-31",
+   "LEVEL1_CONTENT": "2026年中报归属净利润64.39亿元，同比下降24.29%，基本每股收益5.278元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202608301828733939",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20260630",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20260630"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2026-08-31",
+   "LEVEL1_CONTENT": "截止2026-06-30，公司A股股东户数为117907户，较上期（2026-03-31）增加4887户，变动幅度4.32%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2026-04-30",
+   "LEVEL1_CONTENT": "截止2026-03-31，公司A股股东户数为113020户，较上期（2025-12-31）增加17275户，变动幅度18.04%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2026-04-23",
+   "LEVEL1_CONTENT": "截止2025-12-31，公司A股股东户数为95745户，较上期（2025-09-30）增加15760户，变动幅度19.70%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2025-10-31",
+   "LEVEL1_CONTENT": "截止2025-09-30，公司A股股东户数为79985户，较上期（2025-06-30）减少24393户，变动幅度-23.37%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2025-08-29",
+   "LEVEL1_CONTENT": "截止2025-06-30，公司A股股东户数为104378户，较上期（2025-03-31）增加35880户，变动幅度52.38%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "分红送转",
+   "SPECIFIC_EVENTTYPE": "分红送转",
+   "NOTICE_DATE": "2026-07-30",
+   "LEVEL1_CONTENT": "2025年度分配10派65.6元(含税)，股权登记日2026-07-30，除权除息日2026-07-31",
+   "LEVEL2_CONTENT": [
+    "2026-07-27：实施方案"
+   ],
+   "INFO_CODE": "AN202607261827354810",
+   "IOS_URL": "eastmoney://page/emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "投资互动",
+   "SPECIFIC_EVENTTYPE": "投资互动",
+   "NOTICE_DATE": "2026-07-28",
+   "LEVEL1_CONTENT": "新增7条投资者互动内容。",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": "https://mgubaqa.eastmoney.com/list?code=600809",
+   "ANDROID_URL": "https://mgubaqa.eastmoney.com/list?code=600809"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "大宗交易",
+   "SPECIFIC_EVENTTYPE": "大宗交易",
+   "NOTICE_DATE": "2026-07-17",
+   "LEVEL1_CONTENT": "成交均价122.50元，溢价5.39%，成交量3.3万股，成交金额404.3万元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": "eastmoney://page/emrn?id=dztrade&page=CompanyDetail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=dztrade&page=CompanyDetail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  },
+  {
+   "EVENT_TYPE": "大宗交易",
+   "SPECIFIC_EVENTTYPE": "大宗交易",
+   "NOTICE_DATE": "2025-12-12",
+   "LEVEL1_CONTENT": "成交均价180.10元，溢价0.00%，成交量2.41万股，成交金额434万元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "大宗交易",
+   "SPECIFIC_EVENTTYPE": "大宗交易",
+   "NOTICE_DATE": "2025-12-01",
+   "LEVEL1_CONTENT": "成交均价181.18元，折价6.50%，成交量65.09万股，成交金额1.179亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "大宗交易",
+   "SPECIFIC_EVENTTYPE": "大宗交易",
+   "NOTICE_DATE": "2025-11-28",
+   "LEVEL1_CONTENT": "2025-11-28共发生4笔大宗交易，总成交量4.4万股，总成交金额803.6万元",
+   "LEVEL2_CONTENT": [
+    "成交均价182.64元，折价6%，成交量1.1万股，成交金额200.9万元",
+    "成交均价182.64元，折价6%，成交量1.1万股，成交金额200.9万元",
+    "成交均价182.64元，折价6%，成交量1.1万股，成交金额200.9万元",
+    "成交均价182.64元，折价6%，成交量1.1万股，成交金额200.9万元"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "大宗交易",
+   "SPECIFIC_EVENTTYPE": "大宗交易",
+   "NOTICE_DATE": "2025-11-26",
+   "LEVEL1_CONTENT": "2025-11-26共发生6笔大宗交易，总成交量9.29万股，总成交金额1688万元",
+   "LEVEL2_CONTENT": [
+    "成交均价181.70元，折价6%，成交量1.6万股，成交金额290.7万元",
+    "成交均价181.70元，折价6%，成交量1.6万股，成交金额290.7万元",
+    "成交均价181.70元，折价6%，成交量1.6万股，成交金额290.7万元",
+    "成交均价181.70元，折价6%，成交量1.6万股，成交金额290.7万元",
+    "成交均价181.70元，折价6%，成交量1.6万股，成交金额290.7万元",
+    "成交均价181.70元，折价6%，成交量1.29万股，成交金额234.4万元"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2026-06-16",
+   "LEVEL1_CONTENT": "于2026-06-16召开2025年年度股东大会",
+   "LEVEL2_CONTENT": [
+    "1、2025年度董事会工作报告\r\n2、2025年度利润分配预案\r\n3、关于2025-2027年度股东分红回报规划的议案\r\n4、董事、高级管理人员薪酬管理制度\r\n5、关于公司董事薪酬方案的议案\r\n6、关于调整独立董事年度津贴的议案\r\n7、2025年度独立董事述职报告\r\n8、关于修订《募集资金管理制度》的议案\r\n9、关于聘请公司2026年度年报审计机构、内部控制审计机构的议案\r\n10、关于修订《控股股东、实际控制人行为规范》的议案\r\n11、关于增补非独立董事的议案"
+   ],
+   "INFO_CODE": "AN202606041823255203",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "资本运作",
+   "SPECIFIC_EVENTTYPE": "资本运作",
+   "NOTICE_DATE": "2026-06-05",
+   "LEVEL1_CONTENT": "本次控股股东与实际控制人之间产权层级减少系山西省人民政府将山西省国有资本运营有限公司持有的山西杏花村汾酒集团有限责任公司90%股权划转至山西省人民政府国有资产监督管理委员会直接持有。",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "一季报披露",
+   "NOTICE_DATE": "2026-04-30",
+   "LEVEL1_CONTENT": "2026年一季报归属净利润53.83亿元，同比下降19.03%，基本每股收益4.41元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202604291821740063",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20260331",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20260331"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "年报披露",
+   "NOTICE_DATE": "2026-04-23",
+   "LEVEL1_CONTENT": "2025年年报归属净利润122.5亿元，同比增长0.03%，基本每股收益10.04元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202604221821466497",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20251231",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20251231"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "新增概念",
+   "SPECIFIC_EVENTTYPE": "新增概念",
+   "NOTICE_DATE": "2026-03-13",
+   "LEVEL1_CONTENT": "2026-03-13新增概念：味蕾经济",
+   "LEVEL2_CONTENT": [
+    "入选理由：2020年年报回复称，公司为清香型白酒典范，主营多系列白酒。"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "新增概念",
+   "SPECIFIC_EVENTTYPE": "新增概念",
+   "NOTICE_DATE": "2019-11-21",
+   "LEVEL1_CONTENT": "2019-11-21新增概念：白酒",
+   "LEVEL2_CONTENT": [
+    "入选理由：汾酒是清香型白酒的代表、中国名酒的典范。公司产品体系高中低端、结构均匀,主打青花、老白汾、玻汾及竹叶青系列。公司是山西国改排头兵,破除发展机制瓶颈。"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "新增概念",
+   "SPECIFIC_EVENTTYPE": "新增概念",
+   "NOTICE_DATE": "2019-11-21",
+   "LEVEL1_CONTENT": "2019-11-21新增概念：央国企改革",
+   "LEVEL2_CONTENT": [
+    "入选理由：公司被纳入国企改革“双百行动”名单。"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2025-12-04",
+   "LEVEL1_CONTENT": "华创鑫睿(香港)有限公司于2025-11-01至2025-12-01减持738.3万股，变动数量占流通股比例0.61%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2025-11-04",
+   "LEVEL1_CONTENT": "华创鑫睿(香港)有限公司于2025-02-20至2025-10-31减持881.8万股，变动数量占流通股比例0.72%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2025-02-21",
+   "LEVEL1_CONTENT": "华创鑫睿(香港)有限公司于2024-12-23至2025-02-19减持630万股，变动数量占流通股比例0.52%，交易均价180.88元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2024-09-13",
+   "LEVEL1_CONTENT": "华创鑫睿(香港)有限公司于2024-06-12至2024-09-11减持170.2万股，变动数量占流通股比例0.14%，交易均价206.80元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东增持",
+   "NOTICE_DATE": "2024-09-11",
+   "LEVEL1_CONTENT": "山西杏花村汾酒集团有限责任公司于2024-08-29至2024-09-10增持23.69万股，变动数量占流通股比例0.02%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "三季报披露",
+   "NOTICE_DATE": "2025-10-31",
+   "LEVEL1_CONTENT": "2025年三季报归属净利润114亿元，同比增长0.48%，基本每股收益9.35元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202510301771933059",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250930",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250930"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2025-09-19",
+   "LEVEL1_CONTENT": "于2025-09-19召开2025年第二次临时股东大会",
+   "LEVEL2_CONTENT": [
+    "1、关于修订公司《章程》及其附件的议案\n2、关于修订公司其他治理制度的议案\n3、关于选举非独立董事的议案\n4、关于选举独立董事的议案"
+   ],
+   "INFO_CODE": "AN202509031738457390",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "中报披露",
+   "NOTICE_DATE": "2025-08-29",
+   "LEVEL1_CONTENT": "2025年中报归属净利润85.05亿元，同比增长1.13%，基本每股收益6.972元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202508281736030905",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250630",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250630"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "沪深港通",
+   "SPECIFIC_EVENTTYPE": "沪深港通",
+   "NOTICE_DATE": "2025-07-21",
+   "LEVEL1_CONTENT": "07-21沪股通成交总额8.098亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": "eastmoney://page/emrn?id=hsgt&page=singleStock&&code=600809.SH&name=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=hsgt&page=singleStock&&code=600809.SH&name=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  },
+  {
+   "EVENT_TYPE": "沪深港通",
+   "SPECIFIC_EVENTTYPE": "沪深港通",
+   "NOTICE_DATE": "2025-07-18",
+   "LEVEL1_CONTENT": "07-18沪股通成交总额11.07亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "沪深港通",
+   "SPECIFIC_EVENTTYPE": "沪深港通",
+   "NOTICE_DATE": "2025-04-17",
+   "LEVEL1_CONTENT": "04-17沪股通成交总额6.456亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "沪深港通",
+   "SPECIFIC_EVENTTYPE": "沪深港通",
+   "NOTICE_DATE": "2025-03-18",
+   "LEVEL1_CONTENT": "03-18沪股通成交总额7.075亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "沪深港通",
+   "SPECIFIC_EVENTTYPE": "沪深港通",
+   "NOTICE_DATE": "2025-03-17",
+   "LEVEL1_CONTENT": "03-17沪股通成交总额16.97亿元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "分红送转",
+   "SPECIFIC_EVENTTYPE": "分红送转",
+   "NOTICE_DATE": "2025-07-04",
+   "LEVEL1_CONTENT": "2024年度分配10派36元(含税)，股权登记日2025-07-04，除权除息日2025-07-07",
+   "LEVEL2_CONTENT": [
+    "2025-07-01：实施方案"
+   ],
+   "INFO_CODE": "AN202506301700366040",
+   "IOS_URL": "eastmoney://page/emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2025-05-29",
+   "LEVEL1_CONTENT": "于2025-05-29召开2024年年度股东大会",
+   "LEVEL2_CONTENT": [
+    "1、2024年度董事会工作报告\r\n2、2024年度监事会工作报告\r\n3、2024年度独立董事述职报告\r\n4、2024年度财务决算报告\r\n5、2024年度利润分配预案\r\n6、2024年年度报告及其摘要\r\n7、关于聘请公司2025年度年报审计机构、内部控制审计机构的议案\r\n8、关于增补第八届董事会董事的议案"
+   ],
+   "INFO_CODE": "AN202504291664534399",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "一季报披露",
+   "NOTICE_DATE": "2025-04-30",
+   "LEVEL1_CONTENT": "2025年一季报归属净利润66.48亿元，同比增长6.15%，基本每股收益5.45元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202504291664534382",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250331",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20250331"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "年报披露",
+   "NOTICE_DATE": "2025-04-30",
+   "LEVEL1_CONTENT": "2024年年报归属净利润122.4亿元，同比增长17.29%，基本每股收益10.04元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202504291664534389",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20241231",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20241231"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2025-04-30",
+   "LEVEL1_CONTENT": "截止2025-03-31，公司A股股东户数为68498户，较上期（2024-12-31）减少29479户，变动幅度-30.09%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2025-04-30",
+   "LEVEL1_CONTENT": "截止2024-12-31，公司A股股东户数为97977户，较上期（2024-09-30）增加19006户，变动幅度24.07%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2024-10-31",
+   "LEVEL1_CONTENT": "截止2024-09-30，公司A股股东户数为78971户，较上期（2024-06-30）增加11708户，变动幅度17.41%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2024-08-28",
+   "LEVEL1_CONTENT": "截止2024-06-30，公司A股股东户数为67263户，较上期（2024-03-31）增加5389户，变动幅度8.71%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东户数",
+   "SPECIFIC_EVENTTYPE": "股东户数",
+   "NOTICE_DATE": "2024-04-26",
+   "LEVEL1_CONTENT": "截止2024-03-31，公司A股股东户数为61874户，较上期（2023-12-31）减少12988户，变动幅度-17.35%",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "分红送转",
+   "SPECIFIC_EVENTTYPE": "分红送转",
+   "NOTICE_DATE": "2025-01-23",
+   "LEVEL1_CONTENT": "2024三季度分配10派24.6元(含税)，股权登记日2025-01-23，除权除息日2025-01-24",
+   "LEVEL2_CONTENT": [
+    "2025-01-20：实施方案"
+   ],
+   "INFO_CODE": "AN202501191642337539",
+   "IOS_URL": "eastmoney://page/emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2025-01-09",
+   "LEVEL1_CONTENT": "于2025-01-09召开2025年第一次临时股东大会",
+   "LEVEL2_CONTENT": [
+    "1、关于实施2024年中期利润分配的议案"
+   ],
+   "INFO_CODE": "AN202412241641417211",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2024-11-04",
+   "LEVEL1_CONTENT": "于2024-11-04召开2024年第一次临时股东大会",
+   "LEVEL2_CONTENT": [
+    "1、《关于修订公司<章程>的议案》\r\n2、《关于变更2024年度年报会计师事务所的议案》"
+   ],
+   "INFO_CODE": "AN202410161640323607",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "三季报披露",
+   "NOTICE_DATE": "2024-10-31",
+   "LEVEL1_CONTENT": "2024年三季报归属净利润113.5亿元，同比增长20.34%，基本每股收益9.3元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202410301640599100",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240930",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240930"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "中报披露",
+   "NOTICE_DATE": "2024-08-28",
+   "LEVEL1_CONTENT": "2024年中报归属净利润84.1亿元，同比增长24.27%，基本每股收益6.894元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202408271639486210",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240630",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240630"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东增持",
+   "NOTICE_DATE": "2024-08-28",
+   "LEVEL1_CONTENT": "公司股东于2024-03-11至2024-08-28增持，累计73.1万股，占流通股本0.06%",
+   "LEVEL2_CONTENT": [
+    "山西杏花村汾酒集团有限责任公司于2024-03-11至2024-08-27增持66.79万股，变动数量占流通股比例0.05%",
+    "山西杏花村汾酒集团有限责任公司于2024-08-28增持6.31万股，变动数量占流通股比例0.01%"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2020-09-02",
+   "LEVEL1_CONTENT": "山西杏花村汾酒集团有限责任公司于2020-06-24至2020-09-01减持1057万股，变动数量占流通股比例1.22%，交易均价148.31元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2018-03-28",
+   "LEVEL1_CONTENT": "山西杏花村汾酒集团晋泉涌有限责任公司于2017-12-18减持5.09万股，变动数量占流通股比例0.01%，交易均价58.33元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  },
+  {
+   "EVENT_TYPE": "股东增减持",
+   "SPECIFIC_EVENTTYPE": "股东减持",
+   "NOTICE_DATE": "2010-01-23",
+   "LEVEL1_CONTENT": "公司股东于2007-05-11至2010-01-21减持，累计466.7万股，占流通股本1.08%",
+   "LEVEL2_CONTENT": [
+    "汾酒集团酒都宾馆于2007-05-11至2010-01-21减持8万股，变动数量占流通股比例0.02%",
+    "山西杏花村汾酒大厦于2007-05-11至2010-01-21减持100万股，变动数量占流通股比例0.23%",
+    "山西杏花村国际贸易公司于2007-05-11至2010-01-21减持358.7万股，变动数量占流通股比例0.83%"
+   ],
+   "INFO_CODE": null,
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "分红送转",
+   "SPECIFIC_EVENTTYPE": "分红送转",
+   "NOTICE_DATE": "2024-07-04",
+   "LEVEL1_CONTENT": "2023年度分配10派43.7元(含税)，股权登记日2024-07-04，除权除息日2024-07-05",
+   "LEVEL2_CONTENT": [
+    "2024-06-28：实施方案"
+   ],
+   "INFO_CODE": "AN202406271636960763",
+   "IOS_URL": "eastmoney://page/emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92",
+   "ANDROID_URL": "dfcft://emrn?id=fhsz&page=Detail&stockCode=600809.SH&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92"
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "股东大会",
+   "SPECIFIC_EVENTTYPE": "股东大会",
+   "NOTICE_DATE": "2024-05-17",
+   "LEVEL1_CONTENT": "于2024-05-17召开2023年年度股东大会",
+   "LEVEL2_CONTENT": [
+    "1、2023年度董事会工作报告\r\n2、2023年度监事会工作报告\r\n3、2023年度独立董事述职报告\r\n4、2023年度财务决算报告\r\n5、2023年度利润分配预案\r\n6、2023年年度报告及其摘要\r\n7、关于修订公司《章程》的议案\r\n8、关于重新制订《独立董事工作制度》的议案\r\n9、关于修订《关联交易管理办法》的议案"
+   ],
+   "INFO_CODE": "AN202405131632962152",
+   "IOS_URL": null,
+   "ANDROID_URL": null
+  }
+ ],
+ [
+  {
+   "EVENT_TYPE": "报表披露",
+   "SPECIFIC_EVENTTYPE": "一季报披露",
+   "NOTICE_DATE": "2024-04-26",
+   "LEVEL1_CONTENT": "2024年一季报归属净利润62.62亿元，同比增长29.95%，基本每股收益5.13元",
+   "LEVEL2_CONTENT": null,
+   "INFO_CODE": "AN202404251631294916",
+   "IOS_URL": "eastmoney://page/emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240331",
+   "ANDROID_URL": "dfcft://emrn?id=yjzt&page=ReportDetail&stockCode=600809&stockName=%E5%B1%B1%E8%A5%BF%E6%B1%BE%E9%85%92&date=20240331"
+  }
+ ]
+]
