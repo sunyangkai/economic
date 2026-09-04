@@ -1,0 +1,17 @@
+{
+  "name": "economic-research",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "经济研究知识库：api/（东财数据获取）+ tools/（估值计算、PDF 提取）",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "valuation": "node tools/valuation.js",
+    "pdf2text": "node tools/pdf2text.js"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^6.3.289"
+  }
+}
