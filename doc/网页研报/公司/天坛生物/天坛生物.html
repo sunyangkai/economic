@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天坛生物（600161.SH）</title>
+<!-- 由 tools/md2html.js 生成 -->
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 2.5rem 1.5rem 4rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-size: 16px; line-height: 1.75; color: #1f2328; background: #fff; }
+article { max-width: 860px; margin: 0 auto; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.3; margin-top: 1.5em; margin-bottom: .6em; font-weight: 600; }
+h1, h2 { border-bottom: 1px solid #d1d9e0; padding-bottom: .3em; }
+p { margin: .8em 0; }
+a { color: #0969da; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; margin: 1em 0; display: block; width: max-content; max-width: 100%; overflow: auto; }
+th, td { border: 1px solid #d0d7de; padding: 6px 13px; }
+th { background: #f6f8fa; font-weight: 600; }
+tr:nth-child(2n) { background: #f6f8fa; }
+code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 85%; background: #f6f8fa; border-radius: 6px; padding: .2em .4em; }
+pre { background: #f6f8fa; border-radius: 6px; padding: 16px; overflow-x: auto; }
+pre code { background: none; padding: 0; font-size: 100%; }
+blockquote { margin: 1em 0; padding: 0 1em; color: #59636e; border-left: .25em solid #d0d7de; }
+hr { border: 0; border-top: 3px solid #d1d9e0; margin: 2em 0; }
+img { max-width: 100%; }
+ul, ol { padding-left: 1.5em; }
+.math-block { overflow-x: auto; }
+@media print { body { padding: 0; } article { max-width: none; } }
+
+</style>
+</head>
+<body>
+<article>
+<h1>天坛生物（600161.SH）</h1>
+<blockquote>
+<p><strong>独立研究报告</strong>（写作基准：2026-09-04；财务基线：2025 年报 + 截至基线的快照；下一披露节点：2026 三季报，约 2026-10 下旬；后续实绩见 <a href="%E8%B4%A2%E6%8A%A5%E8%B7%9F%E8%B8%AA/"><code>财报跟踪/</code></a> 目录，每报告期一个文件）：
+<a href="%E8%B4%A2%E6%8A%A5%E8%B7%9F%E8%B8%AA/2026%E4%B8%AD%E6%8A%A5.md">2026 中报跟踪（已披露）</a>｜<a href="%E8%B4%A2%E6%8A%A5%E8%B7%9F%E8%B8%AA/2026%E4%B8%89%E5%AD%A3%E6%8A%A5.md">2026 三季报（待披露）</a></p>
+</blockquote>
+<blockquote>
+<p>报告更新：2026-09-04（A 股现价 12.28 元，2026-09-04 收盘）。数据来源：东方财富 F10 财务接口（api/）、机构盈利预测接口（api/orgForecast.js，2026-09-04 一致预期）、股东户数与前十大流通股东接口；估值计算用 tools/valuation.js（统一三段式模型）。财务基线为 2025 年报，此后实绩更新见 <code>财报跟踪/</code>。</p>
+</blockquote>
+<h2>零、核心逻辑</h2>
+<h3>要点速览</h3>
+<p>天坛生物的利润本质是&quot;血浆资源加工价差&quot;：采浆成本相对刚性，产品价格与吨浆产出决定利润弹性——2025 年归母净利 10.91 亿（<span style="color:#0f7a33">-29.59%</span>）的下滑不靠销量解释（销量 <span style="color:#d02020">+16.71%</span>），而靠价格（主营瓶均价约 <span style="color:#0f7a33">-12.4%</span>，自算）与减值、利息三项解释；当前利润的修复前提是价格企稳，而非放量。增长靠四个方向：血源与产能（采浆 2,801 吨、目标 3,000 吨，设计产能超 5,000 吨）、吨浆产出（16 个品种、皮丙国内首家获批）、静丙渗透率提升与行业价格出清、国际化起步。护城河 8/10——准入牌照 + 浆站资源 + 央企股东三重叠加，对手学不来，但公司是价格接受者，无定价权实证。估值：现价 12.28 元对应 22.3× 2025A EPS，高于乐观情景内在价值（20.7×，约 11 元，<span style="color:#0f7a33">-7%</span>）——市场已为&quot;2026 即利润底、2027—2028 快速修复&quot;定价，基准情景内在价值约 8 元（<span style="color:#0f7a33">-34%</span>），安全边际不足。</p>
+<p>先记三个读数口径：①少数股东损益占净利润 26.8%（2025A），七家血制企业多数非全资，读利润一律归母口径；②2025 年应收账款因信用政策放宽从 2.03 亿增至 13.86 亿，净现比降至 0.31，利润与现金流阶段性背离；③2026-01-01 起血液制品增值税由 3% 简易征收改为 13% 一般计税，2026 年起毛利率读数同时承担税制影响，与 2025 年同比不可直接比较。</p>
+<p>证据链见以下各节；催化剂与阈值见&quot;六、跟踪清单&quot;，逐期实绩见 <a href="%E8%B4%A2%E6%8A%A5%E8%B7%9F%E8%B8%AA/"><code>财报跟踪/</code></a>。</p>
+<h3>1. 从业务场景看增长预期</h3>
+<ul>
+<li><p><strong>方向一：血源与产能——&quot;量&quot;的确定性</strong></p>
+<ul>
+<li><p>逻辑：血浆是行业唯一的原料瓶颈，采浆量与产能决定收入天花板；公司浆站数量与采浆规模全国第一，量的增长是全部增长的地基。</p>
+</li>
+<li><p>驱动力：①2026 年经营计划明确&quot;力争采浆量达到 3,000 吨&quot;（2025A 2,801 吨，隐含 <span style="color:#d02020">+7.1%</span>）；②血源管理架构改革（撤销原血源管理中心、设六个血源大区贴近浆站一线）与献血浆者激励政策；③永安基地已投产、云南与兰州基地 2026H1 均完成竣工验收，设计产能超 5,000 吨，投浆能力约束解除。</p>
+</li>
+<li><p>验证指标：采浆量（半年报 / 年报披露，吨）——2026 年 ≥3,000 吨、中期同比 ≥5%；产能投放以中报在建工程与公告验证。</p>
+</li>
+<li><p>现实约束：献血浆者招募与留存依赖地方政策与补贴环境，浆站监管趋严（2025 年报风险章节&quot;单采血浆站监管风险&quot;）；<strong>若采浆增速长期低于产能投放速度，新基地折旧将反噬利润</strong>——设计产能超 5,000 吨对应当前采浆仅约 2,800 吨，产能利用率（按采浆/设计产能，自算）约 56%。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>方向二：吨浆产出——品种扩充与血浆综合利用</strong></p>
+<ul>
+<li><p>逻辑：同一吨血浆分离出的品种越多、收率越高，吨浆收入越高；这是血浆成本刚性下唯一不受价格周期压制的结构性提利路径。</p>
+</li>
+<li><p>驱动力：①皮下注射人免疫球蛋白（皮丙）2026H1 国内首家获批上市；②天坛贵州人凝血酶原复合物（PCC）上市申请受理；③层析静丙（10% 浓度）获批、CIDP 适应症国内首家获临床许可；④人凝血因子Ⅸ与重组Ⅷ因子-Fc 融合蛋白Ⅲ期推进。</p>
+</li>
+<li><p>验证指标：新品获批与放量进度（公告 / 中报）；吨浆收入（自算：主营收入 ÷ 采浆量，2025A 约 220 万元/吨）——中枢是否上移。</p>
+</li>
+<li><p>现实约束：血制品研发周期长、注册节奏不确定（2025 年报&quot;产品研发风险&quot;）；新品从获批到放量需要学术推广与入院过程，销售费用率仅 2% 的低成本模式能否支撑新品推广待验证。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>方向三：需求与价格周期——静丙渗透与行业出清（利润弹性最大变量）</strong></p>
+<ul>
+<li><p>逻辑：白蛋白 / 静丙需求刚性且人均用量远低于欧美（中报官方口径：免疫球蛋白渗透率远低于发达国家），行业价格下行是供给放量与医保控费叠加的阶段性现象；价格企稳后，量增将直接转化为利润。</p>
+</li>
+<li><p>驱动力：①老龄化与诊疗率提升带来长期需求（年报行业章节口径）；②2025 年公司主动调整价格后 2026H1&quot;价格延续 2025 年四季度水平&quot;——降价动作已一次性完成，后续看行业库存去化；③公司销量 <span style="color:#d02020">+16.71%</span> 证明终端需求承接力。</p>
+</li>
+<li><p>验证指标：季度主营毛利率（基准底 ≥35%，见六章）；白蛋白收入降幅是否收窄（中报实绩见 <code>财报跟踪/2026中报.md</code>）；库存瓶数增速回落至销量增速以内（2025A 库存 <span style="color:#d02020">+96.49%</span> vs 销量 <span style="color:#d02020">+16.71%</span>，剪刀差巨大）。</p>
+</li>
+<li><p>现实约束：<strong>行业供给仍在放量（各集团采浆均增长）、进口白蛋白批签发持续增加、省际联盟集采扩容（年报风险章节口径）——价格 2027 年前不企稳是基准情景的最大风险</strong>；此方向是全部增长方向中弹性与不确定性都最大的一条。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>方向四：国际化——从 0 到 1 的期权</strong></p>
+<ul>
+<li><p>逻辑：血浆处理能力达到国际一线（中报口径）后，出口是消化产能的第二市场。</p>
+</li>
+<li><p>驱动力：①静丙获土耳其 GMP 证书与多米尼加上市许可；②静丙、破伤风、乙肝免疫球蛋白已实现出口销售；③2026 经营计划单列&quot;探索国际业务&quot;。</p>
+</li>
+<li><p>验证指标：国外收入绝对值（年报 / 中报，2025A 仅 162 万元、占 0.03%）。</p>
+</li>
+<li><p>现实约束：欧美市场对血浆溯源要求极高，短期进不去；出口聚焦新兴市场，基数极低，<strong>三年内对利润无实质贡献</strong>，只作期权跟踪。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3>2. 护城河</h3>
+<p>对手是同业四大集团：上海莱士、泰邦生物、派林生物、华兰生物（2025 年报行业章节列举的第一梯队），以及进口白蛋白（对白蛋白品种构成价格上限）。不存在&quot;巨头 + 小厂&quot;之外的新进入者威胁——2001 年起国家未再批准设立新的血液制品生产企业。</p>
+<p><strong>总分：8 / 10——强护城河（9—10 垄断级 / 7—8 强 / 5—6 中等 / ≤4 弱）。</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th align="center">权重</th>
+<th align="center">评分</th>
+<th>防的是谁（为什么学不来）</th>
+<th>依据与扣分点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>准入牌照</td>
+<td align="center">0.25</td>
+<td align="center">9</td>
+<td>防潜在新进入者——2001 年起不再新批生产企业，全国正常经营企业不足 30 家；新设浆站须注册品种 ≥6 个（2012 年 5 号文）</td>
+<td>公司 16 个品种、105 个文号（2026 中报口径），品种数满足新设浆站门槛且构成资格优势；牌照存量不可复制</td>
+</tr>
+<tr>
+<td>血浆资源网络</td>
+<td align="center">0.30</td>
+<td align="center">9</td>
+<td>防四大集团——浆站实行&quot;一个采血区域一站&quot;制，存量浆站是稀缺牌照资源；2025 年报口径：107 家浆站 / 在营 85 家、采浆 2,801 吨、行业占比约 20%</td>
+<td>采浆规模全国第一且占比稳定；扣分点：浆站分布于 16 省，部分区域与同行存在浆站资源竞争，单站产出管理难度随规模上升</td>
+</tr>
+<tr>
+<td>规模与工艺</td>
+<td align="center">0.15</td>
+<td align="center">8</td>
+<td>防同行价格战——三大千吨基地 + 全品类布局摊薄单位成本，&quot;四统一&quot;提收率</td>
+<td>设计产能超 5,000 吨行业最大；扣分点：产能利用率（采浆/设计产能，自算）约 56%，规模优势兑现依赖采浆增长，当前是&quot;未来的优势&quot;多于&quot;当期的优势&quot;</td>
+</tr>
+<tr>
+<td>品牌与渠道</td>
+<td align="center">0.10</td>
+<td align="center">7</td>
+<td>防中小厂——蓉生 / 上生 / 兰生 / 武生数十年子品牌，终端近 3 万家、三级以上医院超 1,000 家</td>
+<td>血制品渠道黏性强但招标制下品牌溢价有限；白蛋白面对进口品牌竞争</td>
+</tr>
+<tr>
+<td>央企股东与政策资源</td>
+<td align="center">0.20</td>
+<td align="center">8</td>
+<td>防同行抢浆站——依托国药集团与各地战略合作背景争取新浆站设置（年报核心竞争力章节口径）；2025 年升格国药集团二级公司</td>
+<td>集团背书是浆站扩张的隐性准入优势；扣分点：央企治理对薪酬激励与决策速度的约束同样真实</td>
+</tr>
+<tr>
+<td><strong>加权总分</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td>0.25×9 + 0.30×9 + 0.15×8 + 0.10×7 + 0.20×8 = 8.45 ≈ <strong>8</strong></td>
+</tr>
+</tbody></table>
+<p>一句话定位：不到 9—10 分，因为公司是价格接受者——2025—2026 年行业价格下行中毛利率 43.85%（<span style="color:#0f7a33">-10.85pp</span>）即为实证，白蛋白上有进口竞争、下有集采扩容与医保控费，定价权天花板清晰可命名；够得上 7—8 分强护城河，因为壁垒多维且互相支撑（牌照×浆站×央企），2025—2026 年逆风中采浆份额稳定在约 20%、销量 <span style="color:#d02020">+16.71%</span>，竞争地位未受侵蚀，受损的只是行业价格。</p>
+<p>下调条件：采浆量行业占比跌破 18%，或浆站网络扩张连续两个报告期停滞（新设浆站数为 0），或单采血浆站发生重大合规事件导致区域性停采——任一持续两个报告期，评分下调至 6，验证证据记入 <code>财报跟踪/</code>。</p>
+<h2>一、业务说明</h2>
+<h3>1. 业务构成</h3>
+<p>公司主营血液制品的研发、生产和销售，产品覆盖人血白蛋白、人免疫球蛋白、人凝血因子三大类及重组凝血因子产品，2025 年报口径 15 个品种、102 个生产文号（2026 中报：16 个品种、105 个文号，新增皮丙）。下辖成都蓉生、天坛兰州、天坛上海（天坛昆明）、天坛武汉、天坛贵州、天坛西安、天坛瑞德七家血液制品企业，是国内最早从事血液制品工业化生产的企业之一（生产历史可追溯至 1966 年）。</p>
+<p>经营模式为&quot;浆站采浆—检疫期—分离纯化—批签发—渠道商—终端&quot;的全产业链闭环：</p>
+<ul>
+<li><p>原料：公司下属单采血浆站（2025 年报口径 107 家、在营 85 家，分布 16 省）依法采浆，血浆逐人份复检并实施检疫期管理后方可投料；</p>
+</li>
+<li><p>生产：低温乙醇蛋白分离法分离纯化、病毒去除灭活，按《中国药典》三部标准生产，自检合格并经批签发后上市；</p>
+</li>
+<li><p>销售：国内通过各省市政府采购招标确定中标价格与区域渠道商，由渠道商配送至医疗机构与零售药店；国外通过经销商出口；</p>
+</li>
+<li><p>研发：设立研发中心统一负责，血源性与基因重组产品&quot;双管齐下&quot;。</p>
+</li>
+</ul>
+<p>产品线按血浆分离组分分三大类：白蛋白类（人血白蛋白，用于血容量置换、低蛋白血症、新生儿高胆红素血症等）；免疫球蛋白类（静注人免疫球蛋白——核心品种，用于原发性 / 继发性免疫缺陷、自身免疫疾病；人免疫球蛋白；乙肝、破伤风、狂犬特异性免疫球蛋白；2026 年新增皮丙）；凝血因子类（人凝血因子Ⅷ——甲型血友病用药、人凝血酶原复合物、人纤维蛋白原）及基因重组产品（注射用重组人凝血因子Ⅷ，行业首家获上市许可）。</p>
+<h3>2. 分部经营数据</h3>
+<p><strong>主营分产品与分地区（2024—2025，单位：亿元；占比与毛利率为主营口径；&quot;同比&quot; = 2025 较 2024，按未舍入原值计算，来源：2025 年报）</strong></p>
+<table>
+<thead>
+<tr>
+<th>分部</th>
+<th align="right">2024</th>
+<th align="right">2025</th>
+<th align="right">占比（2025）</th>
+<th align="right">同比</th>
+<th align="right">毛利率（2025）</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>人血白蛋白</td>
+<td align="right">25.10</td>
+<td align="right">24.42</td>
+<td align="right">39.7%</td>
+<td align="right"><span style="color:#0f7a33">-2.71%</span></td>
+<td align="right">39.47%</td>
+<td>收入下滑主因价格下降；毛利率 -11.73pp，是价格战受损最重的品种（进口白蛋白竞争 + 供给放量）</td>
+</tr>
+<tr>
+<td>静注人免疫球蛋白</td>
+<td align="right">27.58</td>
+<td align="right">30.79</td>
+<td align="right">50.1%</td>
+<td align="right"><span style="color:#d02020">+11.64%</span></td>
+<td align="right">48.01%</td>
+<td>唯一正增长主力——量增（学术推广 + 儿科 / 神经 / 重症领域进院）跑赢价格下降；毛利率 -8.94pp 仍为三大类最高</td>
+</tr>
+<tr>
+<td>其他血液制品</td>
+<td align="right">7.45</td>
+<td align="right">6.28</td>
+<td align="right">10.2%</td>
+<td align="right"><span style="color:#0f7a33">-15.64%</span></td>
+<td align="right">39.50%</td>
+<td>破伤风 / 狂犬 / 乙肝特免球蛋白与因子类等；降幅最大，毛利率 -18.44pp，受价格与需求波动双重影响</td>
+</tr>
+<tr>
+<td><strong>主营合计</strong></td>
+<td align="right"><strong>60.13</strong></td>
+<td align="right"><strong>61.49</strong></td>
+<td align="right">100%</td>
+<td align="right"><span style="color:#d02020">+2.27%</span></td>
+<td align="right">43.75%</td>
+<td>量增价跌的合成结果；毛利率 -10.92pp</td>
+</tr>
+<tr>
+<td>国内地区</td>
+<td align="right">60.09</td>
+<td align="right">61.47</td>
+<td align="right">99.97%</td>
+<td align="right"><span style="color:#d02020">+2.30%</span></td>
+<td align="right">43.75%</td>
+<td>收入几乎全部来自国内</td>
+</tr>
+<tr>
+<td>国外地区</td>
+<td align="right">0.04</td>
+<td align="right">0.02</td>
+<td align="right">0.03%</td>
+<td align="right"><span style="color:#0f7a33">-56.15%</span></td>
+<td align="right">66.18%</td>
+<td>出口尚在起步期（静丙土耳其 GMP、多米尼加上市许可为 2025 年新进展）</td>
+</tr>
+</tbody></table>
+<p><strong>这张表告诉我们</strong>：收入结构上静丙已占半壁且是唯一增长主力，白蛋白受进口与供给双重挤压、其他品种量价齐缩——2025 年主营收入 <span style="color:#d02020">+2.27%</span> 完全靠销量 <span style="color:#d02020">+16.71%</span>（万瓶口径）硬扛价格下降（主营瓶均价约 <span style="color:#0f7a33">-12.4%</span>，自算），三条产品线毛利率全线下滑说明这是行业性价格通缩而非单一产品竞争失利。</p>
+<h3>3. 业务特点</h3>
+<ul>
+<li><p><strong>资源型生意</strong>：原料血浆自采自用，血浆成本占主营成本约 65%（原材料费用 22.38 亿 / 主营成本 34.59 亿），采浆量的约束先于市场需求出现——这决定了公司是&quot;重资源、中资产&quot;模式，增长上限由浆站网络决定。</p>
+</li>
+<li><p><strong>存货周期长</strong>：检疫期（约 3 个月）+ 分离生产周期使存货周转天数达 410 天，血浆投产后约一年才能转化为收入；库存量 <span style="color:#d02020">+96.49%</span>（534 万瓶）与行业价格下行叠加，2025 年呈现明显的行业性累库。</p>
+</li>
+<li><p><strong>低销售费用、高毛利结构被动摇</strong>：销售费用率仅 2.03%（供方市场传统下以渠道商模式销售），但毛利率降至 43.85% 已是近十年低位（2024A 54.70%）——若价格长期低迷，&quot;高毛利&quot;属性需重新定价。</p>
+</li>
+<li><p><strong>重资产扩张期的尾部</strong>：固定资产 + 在建工程合计 58.12 亿（占总资产 35%），三大基地均已竣工或投产，资本开支 6.06 亿已从 2022 年高点 13.54 亿回落——即将进入&quot;投产爬坡 + 折旧上量&quot;阶段，收入增长能否覆盖折旧是未来两年报表的关键变量。</p>
+</li>
+</ul>
+<h2>二、宏观背景</h2>
+<p>本章只做环境评估，不下公司判断。与天坛生物真实相关的宏观变量是：医保控费与支付方式改革（需求与价格）、药品集采扩容（价格）、增值税税制调整（税负）、利率（估值底座）、人口老龄化（长期需求）。公司无外汇敞口（出口占比 0.03%），成本端为血浆采购而非大宗商品，汇率与大宗价格路径不适用，略写。</p>
+<ul>
+<li><p><strong>宏观周期定位</strong>：2026 年上半年中国经济&quot;总量有韧性、需求缺强度&quot;的弱复苏（<code>doc/知识库/宏观/中国/总览/2026年8月.md</code>，GDP <span style="color:#d02020">+4.7%</span>、社零 <span style="color:#d02020">+1.2%</span>）。医疗服务与血制品需求刚性，总量波动对销量的直接传导有限；但医保基金收支压力在弱复苏下更显紧绷，控费强度是价格环境的决定变量。</p>
+</li>
+<li><p><strong>政策与产业环境</strong>：血液制品行业自 2025 年步入调整期（2026 中报官方口径）——集采范围与程度加深（部分省级和省际联盟已将血液制品纳入集采并持续扩容，年报口径）、医保支付方式改革（DRG/DIP）、合理用药监管趋严；叠加 2026-01-01 起增值税由 3% 简易征收改为 13% 一般计税。政策是本轮行业盈利下修的主导变量，而非需求塌方。</p>
+</li>
+<li><p><strong>利率与流动性</strong>：无风险利率低位（估值模型默认 rf = 1.8%）压低估值底座分母，对重资产、长久期资产（公司三大基地投产后的现金流前置为负、后置为正）的估值构成支撑。</p>
+</li>
+</ul>
+<p><strong>宏观到公司的传导（只列真实相关变量）</strong></p>
+<table>
+<thead>
+<tr>
+<th>宏观变量</th>
+<th>当前状态</th>
+<th>传导路径</th>
+<th>对公司的影响</th>
+<th>跟踪指标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>医保控费 / DRG/DIP</td>
+<td>控费持续收紧、支付方式改革全面推进（年报口径）</td>
+<td>医院处方行为与库存策略 → 静丙等品种临床用量与渠道库存</td>
+<td>需求释放受抑制 + 渠道让利，2024H2 起产品价格下行主因之一</td>
+<td>医保政策文件；季度毛利率</td>
+</tr>
+<tr>
+<td>药品集采扩容</td>
+<td>省级 / 省际联盟纳入血液制品并持续扩容（年报口径）</td>
+<td>联盟集采中标价 → 出厂价与渠道价</td>
+<td>价格中枢下移的直接政策渠道；降幅温和则利空出尽、激进则击穿悲观情景</td>
+<td>各省联盟集采文件与中标价</td>
+</tr>
+<tr>
+<td>增值税税制调整</td>
+<td>2026-01-01 起 3% 简易征收改 13% 一般计税（中报口径）</td>
+<td>应纳税额与进项抵扣结构 → 毛利率与净利率读数</td>
+<td>2026 年起利润率系统性承压约数个百分点，且使毛利率同比不可比</td>
+<td>年报税负率；中报归因</td>
+</tr>
+<tr>
+<td>利率</td>
+<td>无风险利率低位（rf≈1.8%）</td>
+<td>折现率 → 估值底座</td>
+<td>对三大基地投产后的长久期现金流构成估值支撑</td>
+<td>10 年期国债收益率</td>
+</tr>
+<tr>
+<td>人口老龄化</td>
+<td>老年人口占比持续攀升（年报口径）</td>
+<td>重症 / 慢病长期用药人群 → 白蛋白、静丙终端需求</td>
+<td>长期需求曲线右移，是&quot;价格终会企稳&quot;判断的需求侧依据</td>
+<td>人口结构数据；批签发量</td>
+</tr>
+</tbody></table>
+<p>总结：宏观对天坛生物整体<strong>逆风偏中性</strong>——最大的宏观变量是医保控费与集采扩容，它直接决定零章方向三&quot;价格企稳&quot;假设能否兑现；证伪阈值是白蛋白 / 静丙在联盟集采中出现大幅降价或毛利率跌破 32%（六章阈值），届时基准情景作废。需求侧（老龄化）与利率端是顺风，但都不改变未来 1—2 年价格周期的方向。</p>
+<h2>三、财务报表分析（财务基线）</h2>
+<blockquote>
+<p>口径注：本章为 2025 年报基线（合并报表），&quot;同比&quot; = 2025 较 2024；比率类用 pp、负值净额科目用增减额、其余用 %；着色仅表示增减符号（+ 红 / - 绿），不代表利好利空；&quot;（自算）&quot;为按年报数据计算科目。</p>
+</blockquote>
+<h3>1. 经营相关数据</h3>
+<p><strong>经营数据要点（2024—2025，单位：吨 / 万瓶 / 元每瓶；来源：2025 年报；瓶均价与单位成本为自算）</strong></p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th align="right">2024</th>
+<th align="right">2025</th>
+<th align="right">同比</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>采浆量（吨）</td>
+<td align="right">约 2,781</td>
+<td align="right">2,801</td>
+<td align="right"><span style="color:#d02020">+0.7%</span></td>
+<td>官方口径 +0.7%；浆站 107 家 / 在营 85 家，行业占比约 20%——2025 年血源基本盘走平</td>
+</tr>
+<tr>
+<td>生产量（万瓶）</td>
+<td align="right">约 1,791</td>
+<td align="right">2,198.63</td>
+<td align="right"><span style="color:#d02020">+22.78%</span></td>
+<td>永安基地投产后&quot;应投尽投&quot;，投浆强度显著大于采浆增速（消耗前期血浆库存与检疫期释放）</td>
+</tr>
+<tr>
+<td>销售量（万瓶）</td>
+<td align="right">约 1,659</td>
+<td align="right">1,936.38</td>
+<td align="right"><span style="color:#d02020">+16.71%</span></td>
+<td>官方归因&quot;加大营销力度&quot;；终端承接力证明需求不塌方</td>
+</tr>
+<tr>
+<td>库存量（万瓶）</td>
+<td align="right">约 272</td>
+<td align="right">534.04</td>
+<td align="right"><span style="color:#d02020">+96.49%</span></td>
+<td>产量增速远超销量增速——行业价格下行期的累库信号，去库压力后置到价格端</td>
+</tr>
+<tr>
+<td>主营瓶均价（自算，元/瓶）</td>
+<td align="right">约 362</td>
+<td align="right">约 318</td>
+<td align="right"><span style="color:#0f7a33">-12.4%</span></td>
+<td>主营收入 ÷ 销量；与官方&quot;产品销售价格较去年同期下降&quot;归因一致</td>
+</tr>
+<tr>
+<td>销售终端</td>
+<td align="right">—</td>
+<td align="right">近 3 万家</td>
+<td align="right">—</td>
+<td>覆盖 30 余省三级以上医院超 1,000 家，渠道广度行业第一梯队</td>
+</tr>
+</tbody></table>
+<p><strong>这张表告诉我们</strong>：2025 年经营的真实画面是&quot;量增价跌 + 主动累库&quot;——采浆走平但投浆与销售放量，价格单边下行吃掉全部量增红利；库存近乎翻倍意味着即便 2026 年价格止跌，公司也要先消化渠道与自有库存，价格修复的斜率因此后置。</p>
+<h3>2. 利润表</h3>
+<p><strong>利润表要点（2024—2025，单位：亿元；&quot;同比&quot; = 2025 较 2024）</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">2024</th>
+<th align="right">2025</th>
+<th align="right">同比</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>营业总收入</td>
+<td align="right">60.32</td>
+<td align="right">61.68</td>
+<td align="right"><span style="color:#d02020">+2.26%</span></td>
+<td>官方归因&quot;销售量增加&quot;；量 +16.71% 对冲价格 -12.4%（自算）后仅余微增</td>
+</tr>
+<tr>
+<td>营业成本</td>
+<td align="right">27.32</td>
+<td align="right">34.63</td>
+<td align="right"><span style="color:#d02020">+26.76%</span></td>
+<td>成本增速为收入增速 12 倍——原材料（血浆采购）+24.10%、制造费用 +36.64%，均为量增 + 单位成本上升</td>
+</tr>
+<tr>
+<td>毛利率（自算）</td>
+<td align="right">54.70%</td>
+<td align="right">43.85%</td>
+<td align="right"><span style="color:#0f7a33">-10.85pp</span></td>
+<td>价格 -12.4% 与单位成本 +8.7%（自算）双杀；不含增值税因素（2026 年起才改税制）；持续性：年报风险章节明示&quot;毛利率存在下降风险&quot;</td>
+</tr>
+<tr>
+<td>销售费用</td>
+<td align="right">1.33</td>
+<td align="right">1.25</td>
+<td align="right"><span style="color:#0f7a33">-6.02%</span></td>
+<td>官方归因市场开发费与广告宣传费下降；费用率 2.03%（自算）为行业罕见的低销售费用结构</td>
+</tr>
+<tr>
+<td>管理费用</td>
+<td align="right">4.81</td>
+<td align="right">4.96</td>
+<td align="right"><span style="color:#d02020">+3.12%</span></td>
+<td>官方归因折旧摊销费、开办费增加——三大基地转固前奏</td>
+</tr>
+<tr>
+<td>研发费用</td>
+<td align="right">1.43</td>
+<td align="right">1.60</td>
+<td align="right"><span style="color:#d02020">+11.89%</span></td>
+<td>官方归因费用化项目增加；另有研发投入合计 3.50 亿（占收入 5.68%，资本化率 58.82%）</td>
+</tr>
+<tr>
+<td>财务费用（净额）</td>
+<td align="right">-0.33</td>
+<td align="right">-0.02</td>
+<td align="right"><span style="color:#d02020">+0.31 亿</span></td>
+<td>利息收入 0.41 亿 → 0.12 亿：官方归因&quot;销售信用政策变化导致存量资金规模下降&quot;</td>
+</tr>
+<tr>
+<td>信用减值损失（损失）</td>
+<td align="right">0.07</td>
+<td align="right">0.65</td>
+<td align="right"><span style="color:#d02020">+0.58 亿</span></td>
+<td>信用放宽后应收计提增加——官方业绩归因三项之一；应收规模不收口则延续</td>
+</tr>
+<tr>
+<td>归母净利润</td>
+<td align="right">15.49</td>
+<td align="right"><strong>10.91</strong></td>
+<td align="right"><span style="color:#0f7a33">-29.59%</span></td>
+<td>官方归因：价格下降 + 信用政策变化带来减值准备增加 + 利息收入减少</td>
+</tr>
+<tr>
+<td>少数股东损益</td>
+<td align="right">5.63</td>
+<td align="right">3.99</td>
+<td align="right"><span style="color:#0f7a33">-29.13%</span></td>
+<td>占净利润 26.8%（自算）——读利润必须用归母口径</td>
+</tr>
+<tr>
+<td>扣非归母净利润</td>
+<td align="right">15.19</td>
+<td align="right">10.76</td>
+<td align="right"><span style="color:#0f7a33">-29.13%</span></td>
+<td>与归母基本同步，无大额非经常项干扰</td>
+</tr>
+<tr>
+<td>实际税率（自算）</td>
+<td align="right">17.07%</td>
+<td align="right">18.26%</td>
+<td align="right"><span style="color:#d02020">+1.19pp</span></td>
+<td>高新技术企业优惠口径内小幅波动</td>
+</tr>
+</tbody></table>
+<p><strong>这张表告诉我们</strong>：2025 年利润下滑 29.59% 是&quot;价格通缩 + 信用放宽的财务后遗症&quot;的合成结果，不是需求或份额问题——销量 <span style="color:#d02020">+16.71%</span>、销售费用下降、扣非与归母同步，说明经营基本盘未坏；但毛利率 <span style="color:#0f7a33">-10.85pp</span> 的量级决定了利润对价格的弹性极高，价格每企稳 1 个百分点，毛利率与利润的修复都会是杠杆式的。</p>
+<h3>3. 资产负债表</h3>
+<p><strong>资产负债表要点（2024 末—2025 末，单位：亿元；&quot;同比&quot; = 期末较上期末）</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">2024 末</th>
+<th align="right">2025 末</th>
+<th align="right">同比</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>货币资金</td>
+<td align="right">26.86</td>
+<td align="right">19.91</td>
+<td align="right"><span style="color:#0f7a33">-25.95%</span></td>
+<td>减少的 6.95 亿主要流向分红（7.07 亿）——官方现金流量表说明&quot;营运资金阶段性短缺、定期存款金额减少&quot;</td>
+</tr>
+<tr>
+<td>应收账款</td>
+<td align="right">2.03</td>
+<td align="right">13.86</td>
+<td align="right"><span style="color:#d02020">+11.83 亿</span></td>
+<td>全表最大变化：信用政策放宽（对战略级、重要级合作伙伴适度信用支持）；2025 年报已计提信用减值 0.65 亿</td>
+</tr>
+<tr>
+<td>应收票据</td>
+<td align="right">约 9.10</td>
+<td align="right">约 3.71</td>
+<td align="right"><span style="color:#0f7a33">-5.39 亿</span></td>
+<td>应收票据及账款合计 17.57 亿（+6.44 亿）——部分票据转为应收账款 + 不满足终止确认条件的票据贴现</td>
+</tr>
+<tr>
+<td>存货</td>
+<td align="right">38.69</td>
+<td align="right">40.22</td>
+<td align="right"><span style="color:#d02020">+3.95%</span></td>
+<td>结构上库存商品（瓶）+96.49%，在制品与血浆为主；周转天数 410 天，属行业正常偏长</td>
+</tr>
+<tr>
+<td>固定资产</td>
+<td align="right">33.07</td>
+<td align="right">36.35</td>
+<td align="right"><span style="color:#d02020">+9.92%</span></td>
+<td>永安基地与重组因子车间持续转固</td>
+</tr>
+<tr>
+<td>在建工程</td>
+<td align="right">24.78</td>
+<td align="right">21.77</td>
+<td align="right"><span style="color:#0f7a33">-12.15%</span></td>
+<td>云南、兰州项目竣工（中报口径）——在建余额将随转固继续下移</td>
+</tr>
+<tr>
+<td>商誉</td>
+<td align="right">5.72</td>
+<td align="right">5.72</td>
+<td align="right">0.00%</td>
+<td>2024 年收购中原瑞德（天坛瑞德）形成，余额稳定</td>
+</tr>
+<tr>
+<td>短期借款</td>
+<td align="right">0</td>
+<td align="right">0.77</td>
+<td align="right"><span style="color:#d02020">+0.77 亿</span></td>
+<td>不满足终止确认条件的票据贴现借款，非实质杠杆</td>
+</tr>
+<tr>
+<td>合同负债</td>
+<td align="right">2.13</td>
+<td align="right">1.78</td>
+<td align="right"><span style="color:#0f7a33">-16.43%</span></td>
+<td>预收规模小（渠道商先款后货模式下占比低），不构成需求先行指标</td>
+</tr>
+<tr>
+<td>归母净资产</td>
+<td align="right">111.39</td>
+<td align="right">117.35</td>
+<td align="right"><span style="color:#d02020">+5.35%</span></td>
+<td>分红 3.95 亿后仍增长——留存收益积累</td>
+</tr>
+<tr>
+<td>资产负债率（自算）</td>
+<td align="right">8.42%</td>
+<td align="right">7.64%</td>
+<td align="right"><span style="color:#0f7a33">-0.78pp</span></td>
+<td>近乎无杠杆：扩产靠自有资金，财务风险极低</td>
+</tr>
+</tbody></table>
+<p><strong>这张表告诉我们</strong>：资产负债表依然干净（负债率 7.64%、有息负债不足 1 亿），真正的变化在资产结构——信用放宽把 11.83 亿现金转化成了应收账款，累库与转固同步抬高了资金占用；这张表的风险不在偿付能力，而在应收账款的回款质量与存货跌价（若价格继续下行）。</p>
+<h3>4. 现金流量表</h3>
+<p><strong>现金流量表要点（2024—2025，单位：亿元；净额类科目&quot;同比&quot;为增减额，负 = 净流出扩大）</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">2024</th>
+<th align="right">2025</th>
+<th align="right">同比</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>经营活动净额</td>
+<td align="right">8.20</td>
+<td align="right">3.39</td>
+<td align="right"><span style="color:#0f7a33">-4.81 亿</span></td>
+<td>官方归因：销售信用政策变化导致回款减少 + 实际支付税费增加</td>
+</tr>
+<tr>
+<td>销售商品收现</td>
+<td align="right">49.31</td>
+<td align="right">47.34</td>
+<td align="right"><span style="color:#0f7a33">-3.99%</span></td>
+<td>收现比 0.82 → 0.77（自算）——收入含账期部分未收现</td>
+</tr>
+<tr>
+<td>投资活动净额</td>
+<td align="right">-18.59</td>
+<td align="right">1.24</td>
+<td align="right"><span style="color:#d02020">+19.83 亿</span></td>
+<td>2024 年含支付中原瑞德股权收购款与定期存款净投放；2025 年存款到期释放，购建支出同步收缩</td>
+</tr>
+<tr>
+<td>购建长期资产支出</td>
+<td align="right">10.67</td>
+<td align="right">6.06</td>
+<td align="right"><span style="color:#0f7a33">-43.21%</span></td>
+<td>资本开支峰值已过（2022 年 13.54 亿）——三大基地竣工后进入下行通道</td>
+</tr>
+<tr>
+<td>筹资活动净额</td>
+<td align="right">-3.70</td>
+<td align="right">-4.42</td>
+<td align="right"><span style="color:#0f7a33">-0.72 亿</span></td>
+<td>分红 7.07 亿（含少数股东）大于票据贴现借款增量</td>
+</tr>
+<tr>
+<td>净现比（自算）</td>
+<td align="right">0.53</td>
+<td align="right">0.31</td>
+<td align="right"><span style="color:#0f7a33">-0.22</span></td>
+<td>历史（2021—2023）中枢 1.28—2.16，当前为信用政策 + 价格战双重压制的失真读数</td>
+</tr>
+</tbody></table>
+<p><strong>这张表告诉我们</strong>：3.39 亿经营现金流对 10.91 亿归母利润，净现比 0.31 是报表中最刺眼的读数——一半是信用政策的主动选择（应收 <span style="color:#d02020">+11.83 亿</span>），一半是价格战的被动结果；投资净额转正说明公司不再大规模输血产能建设，若信用政策在 2026 年收紧，经营现金流有向净现比 0.6—0.8 修复的弹性（该修复已在 2026 中报兑现，见 <code>财报跟踪/</code>）。</p>
+<h3>5. 关键项目跟踪阈值</h3>
+<table>
+<thead>
+<tr>
+<th>科目</th>
+<th>盯什么</th>
+<th>阈值 / 判定</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主营毛利率</td>
+<td>季度毛利率读数</td>
+<td>≥35% 为基准底；跌破 32% 触发估值重估</td>
+<td>季报 / 中报 / 年报</td>
+</tr>
+<tr>
+<td>应收账款 + 票据</td>
+<td>期末余额与账龄结构</td>
+<td>合计 ≤18 亿且一年以上账龄占比不升</td>
+<td>资产负债表附注</td>
+</tr>
+<tr>
+<td>净现比</td>
+<td>经营现金流 ÷ 归母净利</td>
+<td>年度 ≥0.6 为修复中、≥1.0 为修复完成</td>
+<td>现金流量表</td>
+</tr>
+<tr>
+<td>库存量（万瓶）</td>
+<td>库存同比 vs 销量同比</td>
+<td>库存增速回落至销量增速以内</td>
+<td>中报 / 年报产销量表</td>
+</tr>
+<tr>
+<td>采浆量</td>
+<td>半年度 / 年度采浆吨数</td>
+<td>2026 年 ≥3,000 吨（官方目标）</td>
+<td>中报 / 年报</td>
+</tr>
+<tr>
+<td>产能投放</td>
+<td>云南 / 兰州投产与转固节奏</td>
+<td>2026—2027 陆续转固，管理费用与折旧不出现超预期跳升</td>
+<td>中报 / 年报在建工程附注</td>
+</tr>
+<tr>
+<td>白蛋白毛利率</td>
+<td>分产品毛利率读数</td>
+<td>≥29%（2026H1 低点）不进一步下探</td>
+<td>中报 / 年报分产品表</td>
+</tr>
+<tr>
+<td>出口收入</td>
+<td>国外收入绝对值</td>
+<td>占比走出 0.03% 量级方计入增长逻辑</td>
+<td>中报 / 年报分地区表</td>
+</tr>
+</tbody></table>
+<h2>四、业绩预期（基准情景）</h2>
+<h3>1. 业绩基准</h3>
+<ul>
+<li><p>2025A 实际：营业总收入 61.68 亿（<span style="color:#d02020">+2.26%</span>）、归母净利 10.91 亿（<span style="color:#0f7a33">-29.59%</span>）。</p>
+</li>
+<li><p>公司 2026 年经营目标（年报&quot;经营计划&quot;原文口径）：<strong>力争采浆量达到 3,000 吨</strong>；其余为方向性表述（销售转型升级、科研质效、项目投产达效、探索国际业务），<strong>未给出收入 / 利润目标</strong>——业绩基准由本报告自行构建。</p>
+</li>
+<li><p>官方对 2026 年的价格口径（中报原文）：&quot;2026 年上半年公司产品价格延续 2025 年四季度水平&quot;——即降价动作截至 2025Q4 已完成，2026 年为价格低位平台期。</p>
+</li>
+</ul>
+<h3>2. 增长驱动</h3>
+<p>按重要性排序（与零章方向一一对应）：</p>
+<ul>
+<li><p>采浆 3,000 吨目标 + 兰州 / 云南投产——量的底盘，决定收入中枢；</p>
+</li>
+<li><p>增值税影响全年化后的毛利率企稳 + 收率与品种提升——利润率的结构性修复；</p>
+</li>
+<li><p>行业库存去化与价格企稳——利润弹性来源，也是最大不确定项；</p>
+</li>
+<li><p>出口——期权，不进基准。</p>
+</li>
+</ul>
+<h3>3. 利润拆分预测（基准 [g1, g2, g3] = [<span style="color:#0f7a33">-40%</span>, <span style="color:#d02020">+20%</span>, <span style="color:#d02020">+15%</span>]）</h3>
+<p>拆分口径：分产品 × 价格假设，毛利率与费用率推归母；一次性项目不单列（信用减值 0.65 亿在信用政策存续期内按经常性处理）。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">2025A</th>
+<th align="right">2026E</th>
+<th align="right">2027E</th>
+<th align="right">2028E</th>
+<th>假设说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>白蛋白收入增速</td>
+<td align="right"><span style="color:#0f7a33">-2.71%</span></td>
+<td align="right"><span style="color:#0f7a33">-22%</span></td>
+<td align="right"><span style="color:#d02020">+5%</span></td>
+<td align="right"><span style="color:#d02020">+8%</span></td>
+<td>2026 延续上半年降幅但 H2 收窄（实绩见 <code>财报跟踪/2026中报.md</code>）；2027 行业去库后量增恢复</td>
+</tr>
+<tr>
+<td>静丙收入增速</td>
+<td align="right"><span style="color:#d02020">+11.64%</span></td>
+<td align="right"><span style="color:#0f7a33">-12%</span></td>
+<td align="right"><span style="color:#d02020">+12%</span></td>
+<td align="right"><span style="color:#d02020">+12%</span></td>
+<td>2026 价格拖累；2027 层析静丙 + 皮丙协同放量</td>
+</tr>
+<tr>
+<td>其他血液制品增速</td>
+<td align="right"><span style="color:#0f7a33">-15.64%</span></td>
+<td align="right"><span style="color:#0f7a33">-10%</span></td>
+<td align="right"><span style="color:#d02020">+8%</span></td>
+<td align="right"><span style="color:#d02020">+10%</span></td>
+<td>随行业价格企稳</td>
+</tr>
+<tr>
+<td>综合毛利率</td>
+<td align="right">43.85%</td>
+<td align="right">约 37.5%</td>
+<td align="right">约 39.5%</td>
+<td align="right">约 41%</td>
+<td>2026 税制 + 价格双压（上半年读数见 <code>财报跟踪/2026中报.md</code>）；2027 起价格平台期 + 收率提升缓慢修复</td>
+</tr>
+<tr>
+<td>归母净利（亿元）</td>
+<td align="right">10.91</td>
+<td align="right">6.55</td>
+<td align="right">7.86</td>
+<td align="right">9.03</td>
+<td>对应 [<span style="color:#0f7a33">-40%</span>, <span style="color:#d02020">+20%</span>, <span style="color:#d02020">+15%</span>]；2028 年仍低于 2024 峰值 15.49 亿</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>主观判断最强的一步</strong>：&quot;2026 年是利润底&quot;——依据是官方&quot;价格延续 2025Q4 水平&quot;（不再主动降价）+ 库存去化需要时间；可证伪的跟踪指标：2026 三季报毛利率（若跌破 32%）与 2027 年报白蛋白收入（若继续两位数下滑），任一触发即下修基准。</li>
+</ul>
+<h3>4. 机构预测参考（基线时点：2026-09-04，<code>api/orgForecast.js</code> 近六月平均）</h3>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th align="right">预测 EPS（元）</th>
+<th align="right">对应净利（亿元）</th>
+<th align="right">增速</th>
+<th align="right">基线 PE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026E</td>
+<td align="right">0.53</td>
+<td align="right">10.5</td>
+<td align="right"><span style="color:#0f7a33">-3.5%</span></td>
+<td align="right">23.0×</td>
+</tr>
+<tr>
+<td>2027E</td>
+<td align="right">0.60</td>
+<td align="right">11.9</td>
+<td align="right"><span style="color:#d02020">+13.0%</span></td>
+<td align="right">20.4×</td>
+</tr>
+<tr>
+<td>2028E</td>
+<td align="right">0.67</td>
+<td align="right">13.2</td>
+<td align="right"><span style="color:#d02020">+11.4%</span></td>
+<td align="right">18.3×</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>一致预期明显滞后于实绩</strong>：2026E 隐含全年 10.5 亿，但 2026H1 已披露归母仅 2.99 亿（<span style="color:#0f7a33">-52.75%</span>）；中报及预减公告后券商集中下修——中国银河 0.32（2026-09-01）、中金 0.39、开源 0.49、西南 0.44（2026-08-31 至 09-04），近六月平均尚未充分吸收下修。</p>
+</li>
+<li><p><strong>本报告基准与一致预期的分歧</strong>：基准 2026E 6.55 亿 vs 一致预期 10.5 亿——按官方口径（价格延续 25Q4 水平 + 税制影响）与 H1 实绩外推，达成 10.5 亿需要 H2 归母 7.5 亿（较 2025H2 的 4.58 亿 <span style="color:#d02020">+64%</span>），无官方依据支撑；本报告按保守侧处理（分析观点纪律：官方口径优先）。</p>
+</li>
+<li><p>2026 中报已披露实绩与基准增速的解释（§一.5 豁免，此处引用一次）：中报归母 <span style="color:#0f7a33">-52.75%</span> 主要系产品价格延续 2025 年四季度水平叠加 2026-01-01 起增值税改 13% 一般计税（中报官方归因），另含让利去库——详见 <a href="%E8%B4%A2%E6%8A%A5%E8%B7%9F%E8%B8%AA/2026%E4%B8%AD%E6%8A%A5.md"><code>财报跟踪/2026中报.md</code></a>。</p>
+</li>
+</ul>
+<h3>5. 管理层观点</h3>
+<ul>
+<li><p>2026-03-28 年报&quot;经营计划&quot;（官方）：七条目标中经营性表述为&quot;力争采浆量达到 3,000 吨&quot;&quot;推动人血白蛋白、静注人免疫球蛋白等重点产品以及重组人凝血因子Ⅷ销售增加&quot;&quot;尽快获得皮下注射人免疫球蛋白上市许可&quot;（已于 2026H1 兑现）、&quot;推进天坛西安生产、天坛昆明及天坛兰州场地转移，加快项目投产&quot;；同时制定《信用管理制度》与《应收账款管理制度》&quot;严控一年以上应收账款&quot;——针对 2025 年信用放宽后遗症的官方整改承诺。</p>
+</li>
+<li><p>2026-07-15 业绩预减公告（官方）：预计上半年归母净利同比大幅下降，归因与中报一致（价格延续低位 + 增值税政策调整），数值口径见上节豁免处与 <code>财报跟踪/2026中报.md</code>。</p>
+</li>
+<li><p>管理层未在公开交流中形成&quot;市场担忧 vs 回应&quot;结构（业绩说明会纪要未获取，见 <code>doc/知识库/公司/天坛生物/来源索引.md</code> 待补项），不作硬凑；上述官方表态的验证在 <code>财报跟踪/</code>&quot;业绩预期（最新）&quot;节更新。</p>
+</li>
+</ul>
+<h2>五、估值（估值框架）</h2>
+<blockquote>
+<p>统一采用 <code>doc/估值理论/估值模型.md</code>：R = rf + 5.5% = 7.3%、g∞ ≈ 2.33%、过渡期 3 年；θ = 0.15θ₀ + 0.85θₓ。情景表由 <code>tools/valuation.js</code> 生成，数值与 CLI 输出一致（仅按 A 股惯例对带符号数值着色）。</p>
+</blockquote>
+<h3>1. 估值测算</h3>
+<h4>天坛生物的 θ 测定</h4>
+<p>以 2025A 为基准（异常项按常态化口径调整）：</p>
+<ul>
+<li><p>净现比：历史中枢 1.28—2.16（2021—2023），2025A 0.31 为信用政策 + 价格战的失真读数——常态化兑现能力应取历史中枢折价而非当期极值；</p>
+</li>
+<li><p>折旧摊销 4.58 亿（2025A，自算）与维持性资本开支约 4—5 亿大体相当，资本开支峰值已过（13.54 亿 → 6.06 亿），DA − MC ≈ 0；</p>
+</li>
+<li><p>营运资本：存货 40 亿（周转 410 天）为结构性占用，常态年新增占用约 2 亿；2025 年应收 <span style="color:#d02020">+11.83 亿</span>属信用政策一次性，不计入常态占用；</p>
+</li>
+<li><p>资产负债率 7.64%、有息负债不足 1 亿，现金拖累可忽略。</p>
+</li>
+</ul>
+<p>据此 DP₀ ≈ 10.91 + 4.58 − 4.5 − 2 ≈ 9.0 亿，θ₀ ≈ 0.80；成熟阶段（采浆 4,000 吨以上、无大额扩张）取 θₓ ≈ 0.80——<strong>θ = 0.15×0.80 + 0.85×0.80 = 0.80，测定后固定，不做分档情景</strong>。落点解释：血制品是&quot;资源 + 制造&quot;混合型生意，兑现能力弱于轻资产高现金转化行业（0.85—0.95）、强于重营运资本制造业（0.50—0.70）。</p>
+<p><strong>θ 测定情景表（固定基准增速 [-40%, +20%, +15%]，2025A EPS 0.5517 元）</strong></p>
+<table>
+<thead>
+<tr>
+<th>情景</th>
+<th align="right">θ₀</th>
+<th align="right">θₓ</th>
+<th align="right">θ</th>
+<th align="right">内在 PE</th>
+<th align="right">对应股价（基准年 EPS 0.5517）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>无折价（θ=1.00）</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.000</td>
+<td align="right">18.3x</td>
+<td align="right">~10 元</td>
+</tr>
+<tr>
+<td>基准（θ₀ 0.80 / θₓ 0.80）</td>
+<td align="right">0.80</td>
+<td align="right">0.80</td>
+<td align="right">0.800</td>
+<td align="right">14.6x</td>
+<td align="right">~8 元</td>
+</tr>
+</tbody></table>
+<h4>基于利润路径测算估值</h4>
+<p><strong>增速情景表（θ 固定基准 0.80：0.15×0.80 + 0.85×0.80，2025A EPS 0.5517 元，现价 12.28 元）</strong></p>
+<table>
+<thead>
+<tr>
+<th>三年增速（归母口径）</th>
+<th align="right">2025A EPS</th>
+<th align="right">内在 PE</th>
+<th align="right">对应股价</th>
+<th align="right">相对现价 12.28 元</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>悲观（价格战延续至 2027，去库缓慢）（[-50%, 5%, 5%]）</td>
+<td align="right">0.5517</td>
+<td align="right">8.7x</td>
+<td align="right">~5 元</td>
+<td align="right"><span style="color:#0f7a33">-61%</span></td>
+</tr>
+<tr>
+<td>保守（2027 年价格企稳，修复偏慢）（[-45%, 12%, 10%]）</td>
+<td align="right">0.5517</td>
+<td align="right">11.3x</td>
+<td align="right">~6 元</td>
+<td align="right"><span style="color:#0f7a33">-49%</span></td>
+</tr>
+<tr>
+<td>基准（2026 为利润底，2027 温和复苏）（[-40%, 20%, 15%]）</td>
+<td align="right">0.5517</td>
+<td align="right">14.6x</td>
+<td align="right">~8 元</td>
+<td align="right"><span style="color:#0f7a33">-34%</span></td>
+</tr>
+<tr>
+<td>一致预期（2026-09-04 近六月平均，未充分反映中报）（[-3.5%, 13%, 11.4%]）</td>
+<td align="right">0.5517</td>
+<td align="right">20.6x</td>
+<td align="right">~11 元</td>
+<td align="right"><span style="color:#0f7a33">-7%</span></td>
+</tr>
+<tr>
+<td>乐观（2027 价格反弹 + 产能放量提速）（[-34%, 40%, 20%]）</td>
+<td align="right">0.5517</td>
+<td align="right">20.7x</td>
+<td align="right">~11 元</td>
+<td align="right"><span style="color:#0f7a33">-7%</span></td>
+</tr>
+</tbody></table>
+<h3>2. 估值结论</h3>
+<h4>模型结论</h4>
+<table>
+<thead>
+<tr>
+<th>结论维度</th>
+<th>结论</th>
+<th>依据 / 触发条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>贵不贵</td>
+<td><strong>高估</strong>——分歧在近三年利润段，不在终值</td>
+<td>现价 22.3×（2025A EPS）高于全部情景内在 PE（最高 20.7×）；分歧变量是&quot;2026 是否为利润底 + 2027—2028 修复斜率&quot;，终值假设全情景统一无差异</td>
+</tr>
+<tr>
+<td>赔率结构</td>
+<td>不对称向下：基准 <span style="color:#0f7a33">-34%</span>，保守 <span style="color:#0f7a33">-49%</span>；上行要靠&quot;利润创新高&quot;</td>
+<td>现价隐含 2028 年归母 ≥13 亿（超一致预期、逼近 2024 峰值 15.49 亿的 85%+），该路径需价格反弹而非仅企稳</td>
+</tr>
+<tr>
+<td>买入的本质</td>
+<td>买&quot;浆站资源 + 5,000 吨产能 + 价格周期反转&quot;的期权，不是当期盈利</td>
+<td>当期 ROE 9.51%、净现比 0.31，盈利口径不支撑现价；期权的触发器见六章催化剂</td>
+</tr>
+<tr>
+<td>核心张力</td>
+<td>市场按&quot;资源稀缺 + 供给出清&quot;定价 vs 本报告按&quot;供给放量 + 集采扩容 + 税制冲击，价格 2027 年前难反转&quot;定价</td>
+<td>验证信号：2026 三季报毛利率、白蛋白收入降幅、省际联盟集采中标价</td>
+</tr>
+<tr>
+<td>安全边际</td>
+<td>薄：净现金约 19 亿（货币资金 19.91 亿 − 有息负债 0.77 亿，自算）仅占市值 8%</td>
+<td>分红连续（2026 中期 1.98 亿已预案）但分红率 36.25%、股息率约 1.6%（自算）——支撑有限，不构成安全垫</td>
+</tr>
+</tbody></table>
+<h4>关键读数</h4>
+<p>现价 12.28 元对应内在 PE 22.3×，落在&quot;一致预期—乐观&quot;情景之上：<strong>市场隐含的利润路径比尚未充分下修的一致预期更激进</strong>——即 2026 即为利润底，2027—2028 以约 20%—40% 的斜率修复并创出接近上轮峰值的新高。反过来说，只要&quot;价格 2027 年仍未企稳&quot;成立，现价没有情景内支撑。</p>
+<h3>3. 验证窗口</h3>
+<ul>
+<li><p><strong>2026-10 下旬 三季报</strong>：验证 g1——Q3 单季毛利率是否守住 35% 底线、H2 归母是否落在基准假设的 3.5 亿量级（全年 6.55 亿）；同时验证信用整改（《信用管理制度》落地后应收是否收口）。</p>
+</li>
+<li><p><strong>2027-03/04 2026 年报 + 2027 采浆目标</strong>：验证全年归母 vs 基准 6.55 亿、采浆 vs 3,000 吨目标、分红率是否随资本开支下行上调。</p>
+</li>
+<li><p><strong>2026H2—2027 事件验证</strong>：云南 / 兰州投产转固与工艺验证（产能逻辑）、皮丙放量与 PCC 获批（吨浆收入逻辑）、省际联盟集采中标价（价格逻辑的最强外生变量）。</p>
+</li>
+</ul>
+<h2>六、跟踪清单</h2>
+<h3>1. 重点数据</h3>
+<table>
+<thead>
+<tr>
+<th>跟踪项</th>
+<th>看什么指标</th>
+<th>阈值</th>
+<th>跟踪频率</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>采浆量</td>
+<td>半年度 / 年度采浆吨数</td>
+<td>2026 ≥3,000 吨；中期同比 ≥5%</td>
+<td>半年</td>
+<td>中报 / 年报</td>
+</tr>
+<tr>
+<td>主营毛利率</td>
+<td>季度毛利率</td>
+<td>≥35% 基准底；&lt;32% 触发重估</td>
+<td>季</td>
+<td>季报 / 中报 / 年报</td>
+</tr>
+<tr>
+<td>白蛋白 / 静丙收入</td>
+<td>分产品收入同比</td>
+<td>白蛋白降幅收窄至 <span style="color:#0f7a33">-10%</span> 内；静丙转正</td>
+<td>季</td>
+<td>中报 / 年报分产品表</td>
+</tr>
+<tr>
+<td>应收账款 + 票据</td>
+<td>期末余额、账龄</td>
+<td>合计 ≤18 亿；一年以上账龄占比不升</td>
+<td>季</td>
+<td>资产负债表附注</td>
+</tr>
+<tr>
+<td>净现比</td>
+<td>经营现金流 ÷ 归母</td>
+<td>年度 ≥0.6 修复中、≥1.0 修复完成</td>
+<td>季 / 年</td>
+<td>现金流量表</td>
+</tr>
+<tr>
+<td>库存（万瓶）</td>
+<td>库存同比 vs 销量同比</td>
+<td>库存增速回落至销量增速以内</td>
+<td>半年</td>
+<td>中报 / 年报产销量表</td>
+</tr>
+<tr>
+<td>产能投放</td>
+<td>云南 / 兰州投产与转固</td>
+<td>2026—2027 陆续投产、折旧可控</td>
+<td>半年</td>
+<td>中报 / 年报 + 公告</td>
+</tr>
+<tr>
+<td>新品种</td>
+<td>皮丙放量、PCC / Ⅸ因子 / Fc 融合蛋白审批</td>
+<td>2027 年新品收入可见</td>
+<td>事件 / 半年</td>
+<td>公告 / 中报</td>
+</tr>
+<tr>
+<td>出口收入</td>
+<td>国外收入绝对值</td>
+<td>占比走出 0.03% 量级</td>
+<td>年</td>
+<td>中报 / 年报分地区表</td>
+</tr>
+<tr>
+<td>白蛋白 / 静丙价格</td>
+<td>渠道价格与批签发趋势</td>
+<td>价格环比止跌</td>
+<td>月（来源待建立，见 <code>doc/知识库/公司/天坛生物/来源索引.md</code>）</td>
+<td>行业数据</td>
+</tr>
+</tbody></table>
+<h3>2. 催化剂</h3>
+<table>
+<thead>
+<tr>
+<th>触发信号</th>
+<th>看什么（对应&quot;1. 重点数据&quot;行）</th>
+<th>验证时点</th>
+<th>成立 / 不成立的含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行业价格企稳反弹</td>
+<td>行 2 / 行 3：毛利率回升、白蛋白降幅收窄</td>
+<td>2026 三季报起逐季</td>
+<td>成立 → 修复斜率上移，估值向一致预期靠拢；不成立 → 下修至保守 / 悲观情景</td>
+</tr>
+<tr>
+<td>采浆 3,000 吨达成</td>
+<td>行 1：采浆量</td>
+<td>2026 年报</td>
+<td>成立 → 血源逻辑验证；不成立 → 产能利用率缺口扩大</td>
+</tr>
+<tr>
+<td>云南 / 兰州投产转固</td>
+<td>行 7</td>
+<td>2026H2—2027</td>
+<td>成立 → 产能期权兑现；不成立 → 折旧先于收入上量</td>
+</tr>
+<tr>
+<td>新品放量</td>
+<td>行 8：皮丙 / PCC 进度</td>
+<td>2026H2—2027</td>
+<td>成立 → 吨浆收入中枢上移（零章方向二）</td>
+</tr>
+<tr>
+<td>集采温和落地</td>
+<td>行 3 + 政策公告</td>
+<td>事件驱动</td>
+<td>中标价温和 → 利空出尽；大幅降价 → 悲观情景（估值 ~5 元）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>跟踪节奏：必看节点为一季报 / 中报 / 三季报 / 年报；采浆与库存为半年频；白蛋白 / 静丙价格与批签发为月度频（数据来源待建立）；集采与新品审批为事件驱动。</p>
+</blockquote>
+<h3>3. 风险</h3>
+<table>
+<thead>
+<tr>
+<th align="center">评级</th>
+<th>风险</th>
+<th>如果发生 → 会造成</th>
+<th>与估值 / 核心逻辑的对应</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">高</span></td>
+<td>产品价格继续下行（供给放量 + 进口白蛋白 + 渠道去库）</td>
+<td>毛利率跌破 32%、2027 年价格仍无底 → 基准路径失效</td>
+<td>零章方向三现实约束；估值向悲观情景（约 5 元，-61%）下移</td>
+</tr>
+<tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">高</span></td>
+<td>血液制品集采扩容大幅降价</td>
+<td>白蛋白 / 静丙联盟集采中标价大幅下移 → 收入毛利率双杀</td>
+<td>二章传导表核心变量；与上一条叠加时为最大风险组合</td>
+</tr>
+<tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">中高</span></td>
+<td>应收账款与现金流风险</td>
+<td>信用放宽后回款恶化、坏账计提超预期 → 净现比持续 &lt;0.5</td>
+<td>三章阈值行 2 / 3；击穿&quot;利润质量可修复&quot;判断</td>
+</tr>
+<tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">中</span></td>
+<td>采浆不达标</td>
+<td>3,000 吨目标落空 → 产能利用率缺口扩大、单位折旧抬升</td>
+<td>零章方向一现实约束；2026 年报验证</td>
+</tr>
+<tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">中</span></td>
+<td>新基地折旧与税制叠加</td>
+<td>13% 一般计税全年化 + 兰州 / 云南转固 → 费用与折旧跳升</td>
+<td>四章拆分的毛利率假设失效</td>
+</tr>
+<tr>
+<td align="center"><span style="display:inline-block;min-width:3.2em;text-align:center">中低</span></td>
+<td>浆站合规 / 产品质量安全事故</td>
+<td>区域性停采或停售 → 采浆量与牌照价值受损</td>
+<td>护城河全部前提（牌照 + 血源）的黑天鹅；护城河评分下调条件之一</td>
+</tr>
+</tbody></table>
+<h2>七、治理结构</h2>
+<h3>1. 信息表（2025-12-31 / 2026-06-30 口径）</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>控股股东</td>
+<td>中国生物技术股份有限公司（2026-06-30 持股 46.59%；2026Q1 北京生物制品研究所所持 1,880 万股划转至中国生物，成都生研所另持 3.53% 为其一致行动人）</td>
+</tr>
+<tr>
+<td>实际控制人</td>
+<td>中国医药集团有限公司（国务院国资委直接管理）；2025 年 9 月公司管理级别由国药集团三级提升为二级</td>
+</tr>
+<tr>
+<td>董事长</td>
+<td>梁红军（2026-01-16 起，兼中国生物党委书记 / 董事长，在控股股东领薪）</td>
+</tr>
+<tr>
+<td>总经理</td>
+<td>杨汇川（2025-12-31 起；2022-12 至 2026-01 任公司董事长，曾任中国生物总裁）</td>
+</tr>
+<tr>
+<td>董事会</td>
+<td>9 名董事（独立董事 3 人），下设战略与投资、审计与风险管理、业绩考核与薪酬、提名四个专门委员会</td>
+</tr>
+<tr>
+<td>总股本</td>
+<td>1,977,371,446 股，全流通，报告期内未变</td>
+</tr>
+<tr>
+<td>员工</td>
+<td>5,205 人（2025 末）</td>
+</tr>
+<tr>
+<td>现金分红</td>
+<td>2025 年度合计 3.95 亿（分红率 36.25%）；2023—2025 累计 8.40 亿（占三年平均净利 67.23%，年报口径）；2024 年起一年两派</td>
+</tr>
+<tr>
+<td>质押 / 减持</td>
+<td>控股股东无质押冻结；报告期内无控股股东减持</td>
+</tr>
+<tr>
+<td>激励</td>
+<td>无股权激励、无员工持股计划；高管薪酬为央企薪酬体系（2025 年在任高管合计税前 495.11 万元）</td>
+</tr>
+</tbody></table>
+<h3>2. 定性评价</h3>
+<p>治理特征是典型的央企产业集团主导：董事长由控股股东中国生物董事长兼任、总经理由中国生物原总裁回任，2025 年底至 2026 年初的人事交接是集团层面的统筹安排而非公司治理异常。三个观察点：①<strong>集团资源倾斜真实可见</strong>——升格国药二级公司、依托集团与各地战略合作争取浆站设置，这是护城河&quot;央企股东&quot;维度的实体支撑；②<strong>分红取向稳健但不高</strong>——分红率 36.25% 低于 2023—2025 三年 67.23% 的均值口径（分红随利润基数波动），现金优先投向三大基地，资本开支下行后分红率是否上调是股东回报的关键观察点；③<strong>激励与合规整改</strong>——经营计划明确&quot;市场化激励导向&quot;改革与《信用管理制度》建设，央企机制下执行力度待验证；集团层面 2025-08 出具避免同业竞争承诺函（中国生物收购共青城胜帮事项，其下含卫光生物控制权），集团血制资产存在潜在整合方向，时间表未披露，作中性观察。无减持、质押隐忧，接班与合规风险主要来自集团人事安排而非公司自身。</p>
+<h2>八、流通股东变化（筹码方法）</h2>
+<p><strong>前十大流通股东持仓对比（占期末总股本 %，全流通即流通口径；&quot;较上期&quot; = 相对上一报告期末的增幅（按未舍入原值计算），变动不足 0.05% 记&quot;—&quot;；首列为基准期不标；各期均为已披露数据，来源：<code>api/holderData.js</code>；股东户数、大宗交易等逐期明细进 <code>财报跟踪/</code> 对应报告期）</strong></p>
+<table>
+<thead>
+<tr>
+<th>股东</th>
+<th align="right">2025-12-31</th>
+<th align="right">2026-03-31</th>
+<th align="right">较上期</th>
+<th align="right">2026-06-30</th>
+<th align="right">较上期</th>
+<th>变化要点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中国生物技术股份有限公司</td>
+<td align="right">45.64%</td>
+<td align="right">46.59%</td>
+<td align="right"><span style="color:#d02020">+2.08%</span></td>
+<td align="right">46.59%</td>
+<td align="right">—</td>
+<td>Q1 比例上升系北京所 1,880 万股划转（集团内部整合，非二级市场增持）</td>
+</tr>
+<tr>
+<td>成都生物制品研究所有限责任公司</td>
+<td align="right">3.53%</td>
+<td align="right">3.53%</td>
+<td align="right">—</td>
+<td align="right">3.53%</td>
+<td align="right">—</td>
+<td>不变（中国生物一致行动人）</td>
+</tr>
+<tr>
+<td>石雯</td>
+<td align="right">2.79%</td>
+<td align="right">2.79%</td>
+<td align="right">—</td>
+<td align="right">2.79%</td>
+<td align="right">—</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>乔晓辉</td>
+<td align="right">1.89%</td>
+<td align="right">1.89%</td>
+<td align="right">—</td>
+<td align="right">2.11%</td>
+<td align="right"><span style="color:#d02020">+11.47%</span></td>
+<td>个人大户 Q2 增持 429 万股</td>
+</tr>
+<tr>
+<td>香港中央结算有限公司</td>
+<td align="right">2.64%</td>
+<td align="right">1.96%</td>
+<td align="right"><span style="color:#0f7a33">-25.81%</span></td>
+<td align="right">2.01%</td>
+<td align="right"><span style="color:#d02020">+2.43%</span></td>
+<td>北向 Q1 大幅减持、Q2 微幅回流</td>
+</tr>
+<tr>
+<td>张利国</td>
+<td align="right">0.92%</td>
+<td align="right">0.92%</td>
+<td align="right">—</td>
+<td align="right">0.92%</td>
+<td align="right">—</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>招商国证生物医药指数基金</td>
+<td align="right">0.76%</td>
+<td align="right">0.76%</td>
+<td align="right"><span style="color:#d02020">+0.24%</span></td>
+<td align="right">0.78%</td>
+<td align="right"><span style="color:#d02020">+2.38%</span></td>
+<td>行业指数资金连续两季小幅增持</td>
+</tr>
+<tr>
+<td>吴永强</td>
+<td align="right">跌出</td>
+<td align="right">0.54%</td>
+<td align="right">新进</td>
+<td align="right">0.54%</td>
+<td align="right">—</td>
+<td>Q1 新进前十</td>
+</tr>
+<tr>
+<td>张俊发</td>
+<td align="right">跌出</td>
+<td align="right">0.53%</td>
+<td align="right">新进</td>
+<td align="right">0.53%</td>
+<td align="right">—</td>
+<td>Q1 新进前十</td>
+</tr>
+<tr>
+<td>天弘国证生物医药 ETF</td>
+<td align="right">跌出</td>
+<td align="right">跌出</td>
+<td align="right">—</td>
+<td align="right">0.48%</td>
+<td align="right">新进</td>
+<td>Q2 新进前十</td>
+</tr>
+<tr>
+<td>华泰柏瑞沪深 300ETF</td>
+<td align="right">0.82%</td>
+<td align="right">跌出</td>
+<td align="right">—</td>
+<td align="right">跌出</td>
+<td align="right">—</td>
+<td>Q1 跌出前十（宽基资金流出）</td>
+</tr>
+<tr>
+<td>易方达沪深 300 医药 ETF</td>
+<td align="right">0.67%</td>
+<td align="right">0.70%</td>
+<td align="right"><span style="color:#d02020">+5.34%</span></td>
+<td align="right">跌出</td>
+<td align="right">—</td>
+<td>Q2 跌出前十</td>
+</tr>
+<tr>
+<td>北京生物制品研究所有限责任公司</td>
+<td align="right">0.95%</td>
+<td align="right">跌出</td>
+<td align="right">—</td>
+<td align="right">—</td>
+<td align="right">—</td>
+<td>股份划转中国生物，退出前十</td>
+</tr>
+</tbody></table>
+<p><strong>筹码总结</strong>：</p>
+<ul>
+<li><p><strong>边际资金方向</strong>：北向（香港中央结算）Q1 减持 25.8%、Q2 微幅回流，与股价 2026 上半年下行（16.34 元 → 11.58 元）同向——外资在业绩下行期降仓、估值低位试探性回补，未形成正向共振。</p>
+</li>
+<li><p><strong>结构变化</strong>：控股股东层面 Q1 的比例上升是北京所股份划转（集团内部整合，非市场信号）；个人大户乔晓辉 <span style="color:#d02020">+11.5%</span>、吴永强 / 张俊发新进，下跌中散户与个人资金逆势承接；股东户数 2026-02 峰值 88,218 户回落至 84,920 户（<span style="color:#0f7a33">-3.7%</span>），筹码小幅集中。</p>
+</li>
+<li><p><strong>被动资金轮换</strong>：宽基（沪深 300ETF、300 医药 ETF）流出，行业 ETF（招商国证生物医药、天弘国证生物医药）承接——生物医药行业配置资金在增加，宽基配置资金在减少。</p>
+</li>
+<li><p><strong>使用纪律</strong>：筹码是验证信号不是选股依据——当前&quot;个人加仓 + 行业 ETF 承接 + 北向观望&quot;与基本面（H1 归母 <span style="color:#0f7a33">-52.75%</span>）并非正向共振，以基本面为准。</p>
+</li>
+</ul>
+<h2>九、备注：名词解释</h2>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>血液制品</td>
+<td>从健康人血浆或特异免疫血浆中分离、提纯制备的蛋白制剂，分白蛋白类、免疫球蛋白类、凝血因子类三大类</td>
+</tr>
+<tr>
+<td>人血白蛋白</td>
+<td>血浆中含量最高的蛋白，用于血容量置换、低蛋白血症、新生儿高胆红素血症等；国内市场有进口产品竞争</td>
+</tr>
+<tr>
+<td>静注人免疫球蛋白（静丙）</td>
+<td>从上千人份混合血浆中提取的多克隆丙种球蛋白，静脉注射给药，用于免疫缺陷、自身免疫疾病、重症感染等</td>
+</tr>
+<tr>
+<td>层析静丙</td>
+<td>采用层析工艺（第四代工艺）纯化的 10% 高浓度静丙，纯度与安全性更高</td>
+</tr>
+<tr>
+<td>皮丙</td>
+<td>皮下注射人免疫球蛋白，静丙的皮下给药剂型，公司 2026H1 国内首家获批</td>
+</tr>
+<tr>
+<td>特免球蛋白</td>
+<td>含高效价特异性抗体的免疫球蛋白（乙肝、破伤风、狂犬等），用于特定病原体暴露后被动免疫</td>
+</tr>
+<tr>
+<td>凝血因子Ⅷ / PCC / 纤维蛋白原</td>
+<td>凝血因子类三大品种：Ⅷ因子治甲型血友病；人凝血酶原复合物（PCC）治乙型血友病等；纤维蛋白原治低纤维蛋白原血症</td>
+</tr>
+<tr>
+<td>重组凝血因子</td>
+<td>基因重组技术生产的凝血因子，不依赖血浆；公司重组Ⅷ因子为血液制品行业首家获上市许可</td>
+</tr>
+<tr>
+<td>单采血浆站</td>
+<td>经省级卫生行政部门许可采集原料血浆的机构，&quot;一个采血区域只能设置一个&quot;</td>
+</tr>
+<tr>
+<td>采浆量</td>
+<td>一定时期内采集原料血浆的吨数，行业最核心的供给端指标</td>
+</tr>
+<tr>
+<td>在营浆站</td>
+<td>已取得采浆许可证并实际运营的浆站（公司口径：总数 107 家、在营 85 家）</td>
+</tr>
+<tr>
+<td>检疫期</td>
+<td>血浆采集后投料前的隔离存放期，用于追溯供血浆者健康状态、保障病毒安全</td>
+</tr>
+<tr>
+<td>批签发</td>
+<td>每批生物制品上市前经指定机构审核检验的制度，未通过不得上市</td>
+</tr>
+<tr>
+<td>血浆综合利用率</td>
+<td>单吨血浆可分离的产品种类与收率，决定吨浆收入；国际龙头 20+ 种、国内第一梯队 10—12 种</td>
+</tr>
+<tr>
+<td>简易征收 / 一般计税</td>
+<td>增值税两种计税方式：公司 2025 年底前按 3% 简易征收，2026-01-01 起改按 13% 一般计税（可抵扣进项），利润率读数受系统性影响</td>
+</tr>
+<tr>
+<td>DRG/DIP</td>
+<td>医保按疾病诊断相关分组 / 按病种分值付费的支付方式改革，约束医院用药与库存行为</td>
+</tr>
+<tr>
+<td>联盟集采</td>
+<td>多省组成采购联盟统一带量采购；血液制品已被部分省级 / 省际联盟纳入并持续扩容</td>
+</tr>
+<tr>
+<td>中原瑞德 / 天坛瑞德</td>
+<td>公司 2024 年收购的武汉血制企业（商誉 5.72 亿的主要来源），下辖湖北多家浆站</td>
+</tr>
+<tr>
+<td>三大基地</td>
+<td>永安（成都，已投产）、云南（昆明）、兰州三个设计产能各 1,200 吨的血液制品生产基地，建成后总设计产能超 5,000 吨</td>
+</tr>
+</tbody></table>
+
+</article>
+</body>
+</html>
