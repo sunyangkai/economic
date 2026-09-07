@@ -71,6 +71,7 @@ doc/知识库/行业/<行业>/
 | 股东结构 | `api/holderData.js`（`getHolderNumberTrend` / `getTopFreeHolders` / `getTopHolders`） | 户数 + 前十大流通股东逐期对比 |
 | 机构一致预期 | `api/orgForecast.js`（`getOrgForecast`） | 近六月平均 + 各机构 EPS |
 | 公司大事/增减持/质押 | `api/companyEvents.js` | |
+| **公告检索（巨潮）** | **`api/cninfo.js`**（`searchAnnouncements` / `findAnnouncements` / `buildPdfUrl`） | 按关键词检索巨潮公告并返回 PDF 直链（配 `tools/pdf2text.js` 提取）；searchkey 用**证券代码**命中 A 股栏、用**公司简称**命中港股栏，type 留空（实测约定见模块头注释）；找"业绩说明会/投关记录"类公告用 `findAnnouncements` 按标题筛选、maxPages 封顶防失控 |
 | **估值计算** | **`tools/valuation.js`** | `--help` 看用法；`<spec.json>` 输出 markdown 情景表 |
 | **官方 PDF → 文本** | **`tools/pdf2text.js`** | 官方年报/中报 PDF 提取原文（管理层讨论/分部明细/经营计划/风险/分红原文） |
 | 临时脚本 | `temp/` | 用完即删，不提交 |

@@ -5,6 +5,7 @@ export { getStockCashFlowStatement } from './cashFlowStatement.js';
 export { getCompanyEvents, ALL_EVENT_TYPES } from './companyEvents.js';
 export { getOrgForecast, ORG_PREDICT_COLUMNS } from './orgForecast.js';
 export { getQuote, parseQuoteLine, inferMarket, normalizeSecid } from './quote.js';
+export { searchAnnouncements, findAnnouncements, buildPdfUrl } from './cninfo.js';
 export {
   getHolderNumberTrend,
   getTopFreeHolders,
