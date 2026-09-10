@@ -9,12 +9,9 @@
   },
   "scripts": {
     "valuation": "node tools/valuation.js",
-    "pdf2text": "node tools/pdf2text.js",
-    "md2html": "node tools/md2html.js"
+    "pdf2text": "node tools/pdf2text.js"
   },
   "dependencies": {
-    "katex": "^0.18.5",
-    "marked": "^18.0.11",
     "pdfjs-dist": "^6.3.289"
   }
 }
