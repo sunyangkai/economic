@@ -12,7 +12,7 @@
  *   node tools/pdf2text.js <pdf路径> --out <txt> --pages 1-30
  *
  * ── 文件约定 ────────────────────────────────────────────────────────
- * 官方报告 PDF 存 doc/研报/公司/定期报告原文件/<公司>/<报告期>.pdf；
+ * 官方报告 PDF 存 doc/研报/公司/<申万一级行业>/<申万二级行业>/<公司>/定期报告原文件/<报告期>.pdf；
  * 提取结果建议存 temp/（临时，用完即删）或随研报使用。
  *
  * 输出含分页标记 "===== 第 N 页 ====="，便于定位章节。
@@ -82,7 +82,7 @@ const USAGE = `用法:
   node tools/pdf2text.js <pdf路径> --out <txt路径>    # 输出到文件
   node tools/pdf2text.js <pdf路径> --pages 1-30      # 只提取指定页
 
-官方报告 PDF 存 doc/研报/公司/定期报告原文件/<公司>/；扫描版 PDF 需先 OCR。`;
+官方报告 PDF 存 doc/研报/公司/<申万一级行业>/<申万二级行业>/<公司>/定期报告原文件/；扫描版 PDF 需先 OCR。`;
 
 // CLI 入口：直接执行本文件时运行（import 时不执行）
 import { pathToFileURL } from 'node:url';
