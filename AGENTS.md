@@ -13,6 +13,7 @@
 - 本项目的 `api/` 目录是自建的数据获取工具集（如 `api/request.js`、`api/mainFinanceData.js`、`api/incomeStatement.js` 等），统一封装了外部数据源（东方财富 datacenter 等）的调用。
 - 为本项目工作时，可以直接使用 `api/` 目录下的工具获取数据，无需再向用户确认或申请许可。
 - 使用前先查看 `api/` 内对应模块的导出和用法，遵循现有的封装方式（请求头、参数、错误处理），不要绕过封装自行拼接外部请求。
+- **报告期参数陷阱（2026-09-12 实测踩坑）**：**三表接口**（`api/incomeStatement.js` / `api/balanceSheet.js` / `api/cashFlowStatement.js`）**没有 `reportType` 选项**——季报/中报必须用 `reportDates: ['2026-06-30', ...]`（年报可用 `years: [2025, 2024]`）；传 `reportType`（含空串 `''`）**不会报错，而是静默回落到最近 5 期年报**，会把年报当季报填进表、错误一路传到同比与估值。只有 `api/mainFinanceData.js`（主要财务指标）支持 `reportType`，**且其字段口径与三表不同，不可混拼同一张表**。漏传报告期时 `resolveReportDates` 会打一次性 console.warn。
 
 ## 工具函数目录
 

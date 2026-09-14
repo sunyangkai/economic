@@ -106,6 +106,27 @@
  *
  * 注: 银行/保险/券商专用字段（DEPOSIT_INTERBANK_ADD、LOAN_ADVANCE_ADD、
  *     RECEIVE_ORIGIC_PREMIUM 等）通用(非金融)企业返回 null，可忽略。
+ *
+ * ── ⚠ 报告期参数陷阱（2026-09-12 实测踩坑，勿重犯）──────────────────
+ * 本模块**没有 `reportType` 选项**（与 `api/mainFinanceData.js` 不同，后者有）。
+ * 报告期一律由 `reportDates: ['2026-06-30', ...]` 或 `years: [2025, 2024]` 指定。
+ *
+ * 错误写法 → 静默返回年报：
+ *   getStockCashFlowStatement('600887.SH', { reportType: '中报' })   // ✗ 选项被丢弃
+ *   getStockCashFlowStatement('600887.SH', { reportType: '' })       // ✗ 同上
+ * 上两行都不会报错：`reportType` 未被解构、静默丢弃，`resolveReportDates` 收不到
+ * `reportDates`/`years`，于是回落到"最近 5 个年度报告日"——返回的是**年报累计数**。
+ * 危险之处在于**它不报错**：现金流量表的季度/年度口径差异极大（净现比在半年报
+ * 与年报间不可直接比），拿成年报会直接算错净现比、并污染估值里的 θ 判定。
+ *
+ * 正确写法（季度/中报口径逐期取）：
+ *   getStockCashFlowStatement('600887.SH', { reportDates: ['2026-06-30'] })        // 2026 中报累计
+ *   getStockCashFlowStatement('600887.SH', { reportDates: ['2026-06-30', '2025-06-30'] })
+ *   getStockCashFlowStatement('600887.SH', { years: [2025, 2024, 2023] })          // 仅年报
+ * 漏传时会触发 `resolveReportDates` 的一次性 console.warn（同一进程只警告一次）。
+ *
+ * 需要按"年报/中报/一季报/三季报"类型过滤时用 `api/mainFinanceData.js`（主要财务
+ * 指标，支持 `reportType`）；但**它的字段口径与三表不同**，不可混用两套数拼同一张表。
  */
 
 import { fetchDataCenter, buildSecFilter, resolveReportDates } from './request.js';
@@ -137,7 +158,7 @@ export function getStockCashFlowStatement(seccode, options = {}) {
   } = options;
 
   const filter = buildSecFilter(seccode, {
-    REPORT_DATE: resolveReportDates({ reportDates, years }),
+    REPORT_DATE: resolveReportDates({ reportDates, years }, { caller: 'getStockCashFlowStatement（cashFlowStatement.js）' }),
   });
 
   return fetchDataCenter('RPT_F10_FINANCE_GCASHFLOW', 'APP_F10_GCASHFLOW', {

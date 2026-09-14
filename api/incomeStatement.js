@@ -91,6 +91,28 @@
  *
  * 注: 银行/保险/券商专用字段（INTEREST_INCOME、EARNED_PREMIUM、
  *     FEE_COMMISSION_INCOME 等）通用(非金融)企业返回 null，可忽略。
+ *
+ * ── ⚠ 报告期参数陷阱（2026-09-12 实测踩坑，勿重犯）──────────────────
+ * 本模块**没有 `reportType` 选项**（与 `api/mainFinanceData.js` 不同，后者有）。
+ * 报告期一律由 `reportDates: ['2026-06-30', ...]` 或 `years: [2025, 2024]` 指定。
+ *
+ * 错误写法 → 静默返回年报：
+ *   getStockIncomeStatement('600887.SH', { reportType: '中报' })   // ✗ 选项被丢弃
+ *   getStockIncomeStatement('600887.SH', { reportType: '' })       // ✗ 同上
+ * 上两行都不会报错：`reportType` 未被解构、静默丢弃，`resolveReportDates` 收不到
+ * `reportDates`/`years`，于是回落到"最近 5 个年度报告日"——返回的是**年报数据**。
+ * 危险之处在于**它不报错**：拿到的是一份看似合理的 5 期年报，很容易被当成季度
+ * 数据填进"单季/中报"表格，且错误会一路传到同比与估值里。
+ *
+ * 正确写法（季度/中报口径逐期取）：
+ *   getStockIncomeStatement('600887.SH', { reportDates: ['2026-06-30'] })        // 2026 中报
+ *   getStockIncomeStatement('600887.SH', { reportDates: ['2026-06-30', '2025-06-30'] })
+ *   getStockIncomeStatement('600887.SH', { years: [2025, 2024, 2023] })          // 仅年报
+ * 漏传时会触发 `resolveReportDates` 的一次性 console.warn（同一进程只警告一次）。
+ *
+ * 需要按"年报/中报/一季报/三季报"类型过滤时用 `api/mainFinanceData.js`（主要财务
+ * 指标，支持 `reportType`）；但**它的字段口径与三表不同**（如 XSMLL 销售毛利率 vs
+ * 本模块自算毛利额），不可混用两套数拼同一张表。
  */
 
 import { fetchDataCenter, buildSecFilter, resolveReportDates } from './request.js';
@@ -122,7 +144,7 @@ export function getStockIncomeStatement(seccode, options = {}) {
   } = options;
 
   const filter = buildSecFilter(seccode, {
-    REPORT_DATE: resolveReportDates({ reportDates, years }),
+    REPORT_DATE: resolveReportDates({ reportDates, years }, { caller: 'getStockIncomeStatement（incomeStatement.js）' }),
   });
 
   return fetchDataCenter('RPT_F10_FINANCE_GINCOME', 'APP_F10_GINCOME', {

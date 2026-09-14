@@ -70,7 +70,7 @@ doc/知识库/行业/<行业>/
 
 | 用途 | 工具 | 说明 |
 | --- | --- | --- |
-| 财务数据（三表/主要指标） | `api/mainFinanceData.js`、`api/balanceSheet.js`、`api/incomeStatement.js`、`api/cashFlowStatement.js` | 走东方财富 F10 封装 |
+| 财务数据（三表/主要指标） | `api/mainFinanceData.js`、`api/balanceSheet.js`、`api/incomeStatement.js`、`api/cashFlowStatement.js` | 走东方财富 F10 封装。**⚠ 报告期参数两套口径，不可混**：三表接口**没有 `reportType` 选项**，季报/中报一律用 `reportDates: ['2026-06-30']`（或 `years` 取年报）；`mainFinanceData` 才有 `reportType`。给三表传 `reportType`（含 `''`）不会报错，而是**静默回落到最近 5 期年报**——会把年报当季报填进表里，错误一路传到同比/净现比/估值（2026-09-12 实测踩坑，已在三个模块头写明；漏传时 `resolveReportDates` 会打一次性 console.warn） |
 | 行情 | `api/quote.js`（`getQuote`） | 腾讯接口，单/批量，GBK 自动解码 |
 | 股东结构 | `api/holderData.js`（`getHolderNumberTrend` / `getTopFreeHolders` / `getTopHolders`） | 户数 + 前十大流通股东逐期对比 |
 | 机构一致预期 | `api/orgForecast.js`（`getOrgForecast`） | 近六月平均 + 各机构 EPS |

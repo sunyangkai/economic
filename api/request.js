@@ -172,17 +172,41 @@ export function buildSecFilter(seccode, extra = {}) {
   return buildFilter(fields);
 }
 
+/** 回落告警去重集合：同一进程内每个"未指定报告期"的调用点只警告一次，避免刷屏 */
+const warnedFallbacks = new Set();
+
 /**
- * 解析报告期列表：优先 years，其次 reportDates，默认最近 N 个年度报告日期
+ * 解析报告期列表：优先 years，其次 reportDates，**都未传时回落到最近 5 个年报日**。
+ *
+ * ⚠ 回落是"静默"的历史行为，也是最容易踩的坑（2026-09-12 实测踩坑，勿重犯）：
+ *   调用三表接口（`api/incomeStatement.js` / `api/balanceSheet.js` /
+ *   `api/cashFlowStatement.js`）时它们**没有 `reportType` 选项**，传
+ *   `{ reportType: '中报' }` 或 `{ reportType: '' }` 都会被静默丢弃、不会报错，
+ *   本函数收不到 reportDates/years，于是回落成 5 期**年报**——调用方以为拿到
+ *   季报/中报，实际拿到年报，错误会一路传进同比、净现比与估值。
+ *   要季报/中报口径，必须显式传 `reportDates: ['2026-06-30', ...]`。
+ *
+ * 为让回落不再完全无声，回落到年报日时会打一条一次性 console.warn（按调用点去重，
+ * 不改变返回值、不影响既有默认行为）。
+ *
  * @param {object} input { reportDates?, years? }
+ * @param {object} [context] { caller? } 调用方名称，仅用于告警文案定位
  * @returns {string[]} 形如 ['2025-12-31','2024-12-31',...]
  */
-export function resolveReportDates({ reportDates, years }) {
+export function resolveReportDates({ reportDates, years } = {}, { caller } = {}) {
   if (Array.isArray(years) && years.length > 0) {
     return years.map((y) => `${y}-12-31`);
   }
   if (Array.isArray(reportDates) && reportDates.length > 0) {
     return reportDates;
+  }
+  const key = caller || 'resolveReportDates';
+  if (!warnedFallbacks.has(key)) {
+    warnedFallbacks.add(key);
+    console.warn(
+      `[api/request] ${key}：未传 reportDates/years，已回落到最近 ${5} 个年报日（12-31）。` +
+      '若本意是取季报/中报，请显式传 reportDates（三表接口不支持 reportType 选项，传了会被静默忽略）。',
+    );
   }
   return defaultAnnualDates(5);
 }

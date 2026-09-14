@@ -23,7 +23,8 @@
  * }
  *
  * ── data[] 记录字段说明（实测非银企业；银行/保险/券商专用字段为 null）────
- * 每个科目字段都带对应的 *_YOY 字段（同比变动，%），如 TOTAL_ASSETS_YOY。
+ * 每个科目字段都带对应的 *_YOY 字段（同比变动，%），如 TOTAL_ASSETS_YOY
+ * （注意：带 *_YOY 的字段是**同比变动率**，不是金额，勿当金额直接入表）。
  *
  * 【基础信息】
  *   SECUCODE            证券代码(含市场后缀)，如 "300760.SZ"
@@ -101,6 +102,27 @@
  *
  * 注: 银行/保险/券商专用字段（如 ACCEPT_DEPOSIT_INTERBANK、LOAN_ADVANCE、
  *     INSURANCE_CONTRACT_RESERVE 等）通用(非金融)企业返回 null，可忽略。
+ *
+ * ── ⚠ 报告期参数陷阱（2026-09-12 实测踩坑，勿重犯）──────────────────
+ * 本模块**没有 `reportType` 选项**（与 `api/mainFinanceData.js` 不同，后者有）。
+ * 报告期一律由 `reportDates: ['2026-06-30', ...]` 或 `years: [2025, 2024]` 指定。
+ *
+ * 错误写法 → 静默返回年报：
+ *   getStockBalanceSheet('600887.SH', { reportType: '中报' })   // ✗ 选项被丢弃
+ *   getStockBalanceSheet('600887.SH', { reportType: '' })       // ✗ 同上
+ * 上两行都不会报错：`reportType` 未被解构、静默丢弃，`resolveReportDates` 收不到
+ * `reportDates`/`years`，于是回落到"最近 5 个年度报告日"——返回的是**年报期末数**。
+ * 危险之处在于**它不报错**：拿到的是 5 个 12-31 时点，很容易被当成"最新一期末"
+ * 填进中报表，把商誉、短借这类期间波动大的科目读错。
+ *
+ * 正确写法（季度/中报口径逐期取）：
+ *   getStockBalanceSheet('600887.SH', { reportDates: ['2026-06-30'] })        // 2026-06-30 时点
+ *   getStockBalanceSheet('600887.SH', { reportDates: ['2026-06-30', '2025-06-30'] })
+ *   getStockBalanceSheet('600887.SH', { years: [2025, 2024, 2023] })          // 仅年报时点
+ * 漏传时会触发 `resolveReportDates` 的一次性 console.warn（同一进程只警告一次）。
+ *
+ * 需要按"年报/中报/一季报/三季报"类型过滤时用 `api/mainFinanceData.js`（主要财务
+ * 指标，支持 `reportType`）；但**它的字段口径与三表不同**，不可混用两套数拼同一张表。
  */
 
 import { fetchDataCenter, buildSecFilter, resolveReportDates } from './request.js';
@@ -132,7 +154,7 @@ export function getStockBalanceSheet(seccode, options = {}) {
   } = options;
 
   const filter = buildSecFilter(seccode, {
-    REPORT_DATE: resolveReportDates({ reportDates, years }),
+    REPORT_DATE: resolveReportDates({ reportDates, years }, { caller: 'getStockBalanceSheet（balanceSheet.js）' }),
   });
 
   return fetchDataCenter('RPT_F10_FINANCE_GBALANCE', 'F10_FINANCE_GBALANCE', {
