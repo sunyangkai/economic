@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- 深色主题图标：深底卡片 + A 股红涨绿跌蜡烛（与页面 / 图表配色一致） -->
+  <rect width="32" height="32" rx="6" fill="#161b22"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="5.5" fill="none" stroke="#3a4351" stroke-width="1.5"/>
+  <g stroke="#e6e9ef" stroke-width="1.6" stroke-linecap="round">
+    <path d="M9 7v18M16 5v22M23 9v16"/>
+  </g>
+  <g>
+    <rect x="6.5" y="12" width="5" height="8" rx="1" fill="#ef5350"/>
+    <rect x="13.5" y="10" width="5" height="7" rx="1" fill="#ef5350"/>
+    <rect x="20.5" y="14" width="5" height="6" rx="1" fill="#1fc08f"/>
+  </g>
+</svg>

@@ -3,16 +3,34 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "经济研究知识库：api/（东财数据获取）+ tools/（估值计算、PDF 提取、行业分类校验）",
+  "description": "经济研究知识库：api/（东财数据获取）+ tools/（估值计算、PDF 提取、行业分类校验）+ src/（K 线行情页，React + webpack + ECharts）",
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "preview": "webpack serve --mode production --port 5181",
     "valuation": "node tools/valuation.js",
     "pdf2text": "node tools/pdf2text.js",
     "swindustry": "node tools/swIndustry.js"
   },
   "dependencies": {
-    "pdfjs-dist": "^6.3.289"
+    "echarts": "^6.1.0",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.5",
+    "html-webpack-plugin": "^5.6.8",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.110.3",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^5.2.6"
   }
 }
