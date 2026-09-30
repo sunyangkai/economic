@@ -216,7 +216,8 @@ function renderGrowthTable(table, macro) {
       });
       const price = pe * r.eps;
       const rel = ((price / currentPrice - 1) * 100).toFixed(0);
-      const relStr = Number(rel) >= 0 ? `+${rel}%` : `${rel}%`;
+      // 四舍五入后恰为 0 时输出 "0%"（避免出现 "+-0%"）
+      const relStr = Number(rel) === 0 ? '0%' : Number(rel) > 0 ? `+${rel}%` : `${rel}%`;
       const g = r.growthForecasts.map(fmtG).join(', ');
       // 行名已自带增速（如 "[6.3%, 13.5%, 14.3%]（基准）"）时不再重复追加
       const label = r.name.includes('[') ? r.name : `${r.name}（[${g}]）`;
