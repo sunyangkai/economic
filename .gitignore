@@ -45,7 +45,8 @@ coverage/
 *.swo
 
 # Misc
-temp/            # 临时脚本与中间产物（用完即删，不提交）
+# 临时脚本与中间产物（用完即删，不提交）
+temp/
 .DS_Store?
 .tmp/
 tmp/
