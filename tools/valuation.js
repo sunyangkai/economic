@@ -13,7 +13,7 @@
  *
  * spec.json 格式：
  * {
- *   "macro": { "rf": 0.018, "nominalGdpGrowth": 4 },        // 可选，默认即此值
+ *   "macro": { "rf": 0.0165, "nominalGdpGrowth": 4 },        // 可选，默认 rf 0.0165 / ERP 0.068
  *   "tables": [
  *     {
  *       "kind": "theta",                         // θ 情景表：固定增速、变 θ
@@ -39,7 +39,7 @@
  *   ]
  * }
  *
- * 每张表还支持可选 "transitionYears"（默认 3）覆盖过渡期年数。
+ * 每张表还支持可选 "transitionYears"（默认 7）覆盖过渡期年数；研报基准一律用 7，不因个股调整。
  */
 
 import { readFileSync } from 'node:fs';
@@ -54,21 +54,21 @@ import { pathToFileURL } from 'node:url';
  * 3. 程序不负责计算 DP0 = NP_adj,0 + DA0 - MC0 - ΔWC^norm,0
  * 4. company.theta0 由外部分析得到：theta0 = DP0 / NP_adj,0
  * 5. company.thetaX 为成熟阶段或长期阶段兑现系数
- * 6. 过渡期统一 3 年（风险补偿，不调整，见估值模型.md“补充说明”）；按“第三年增长率线性衰减，终值起点收敛到终局增速”处理
+ * 6. 过渡期固定 7 年（全公司统一，见估值模型.md“补充说明”）；按“第三年增长率线性衰减，终值起点收敛到终局增速”处理
  *
  * @param {Object} params
  * @param {Object} params.company - 公司层面参数
  * @param {number[]} params.company.growthForecasts - 三年利润增速预测 [g1, g2, g3]
  * @param {number} params.company.theta0 - 当前兑现系数
  * @param {number} params.company.thetaX - 长期兑现系数
- * @param {number} [params.company.transitionYears=3] - 过渡期年数；模型规定统一 3 年（风险补偿），本参数仅作敏感性实验，研报基准一律用 3
+ * @param {number} [params.company.transitionYears=7] - 过渡期年数；模型规定固定 7 年，本参数仅作敏感性实验，研报基准一律用 7
  * @param {number} [params.company.nearTermWeight=0.15] - 前三年权重，默认 15%
  * @param {number} [params.company.longTermWeight=0.85] - 长期权重，默认 85%
  *
  * @param {Object} params.macro - 宏观层面参数
- * @param {number} params.macro.rf - 无风险利率，例如 0.018
+ * @param {number} params.macro.rf - 无风险利率，例如 0.0165
  * @param {number} params.macro.nominalGdpGrowth - 名义 GDP 增速 m 的数字输入，例如 4 表示 4%
- * @param {number} [params.macro.equityRiskPremium=0.055] - 固定股权风险补偿，默认 5.5%
+ * @param {number} [params.macro.equityRiskPremium=0.068] - 固定股权风险溢价，默认 6.8%
  *
  * @returns {number} finalPe
  */
@@ -77,7 +77,7 @@ function calculateIntrinsicPe({ company, macro }) {
     growthForecasts,
     theta0,
     thetaX,
-    transitionYears = 3,
+    transitionYears = 7,
     nearTermWeight = 0.15,
     longTermWeight = 0.85,
   } = company || {};
@@ -85,7 +85,7 @@ function calculateIntrinsicPe({ company, macro }) {
   const {
     rf,
     nominalGdpGrowth,
-    equityRiskPremium = 0.055,
+    equityRiskPremium = 0.068,
   } = macro || {};
 
   if (!Array.isArray(growthForecasts) || growthForecasts.length !== 3) {
@@ -177,11 +177,11 @@ function calculateIntrinsicPe({ company, macro }) {
 
 /* ───────────────────────── 情景生成器（CLI） ───────────────────────── */
 
-const DEFAULT_MACRO = { rf: 0.018, nominalGdpGrowth: 4 };
+const DEFAULT_MACRO = { rf: 0.0165, nominalGdpGrowth: 4, equityRiskPremium: 0.068 };
 
 /** 渲染一张 θ 情景表（固定增速、变 θ） */
 function renderThetaTable(table, macro) {
-  const { title, growthForecasts, eps, rows, transitionYears = 3 } = table;
+  const { title, growthForecasts, eps, rows, transitionYears = 7 } = table;
   const header = `| 情景 | θ₀ | θₓ | θ | 内在 PE | 对应股价（基准年 EPS ${eps}） |`;
   const sep = `| --- | ---: | ---: | ---: | ---: | ---: |`;
   const body = rows
@@ -200,7 +200,7 @@ function renderThetaTable(table, macro) {
 
 /** 渲染一张增速情景表（固定 θ、变增速；行内可覆盖 θ） */
 function renderGrowthTable(table, macro) {
-  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 3, epsLabel = '2026E EPS' } = table;
+  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 7, epsLabel = '2026E EPS' } = table;
   const header = `| 三年增速（归母口径） | ${epsLabel} | 内在 PE | 对应股价 | 相对现价 ${currentPrice} 元 |`;
   const sep = `| --- | ---: | ---: | ---: | ---: |`;
   const fmtG = (x) => `${(x * 100).toFixed(1).replace(/\.0$/, '')}%`;
