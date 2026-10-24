@@ -34,7 +34,9 @@
  *         { "name": "[0%, 5%, 6%]（悲观）", "growthForecasts": [0, 0.05, 0.06], "eps": 6.71 }
  *         // 行内可覆盖 θ（用于"谨慎增速 + 保守 θ"双维情景）：
  *         // { "name": "双保守", "growthForecasts": [0.03, 0.08, 0.09], "eps": 6.92, "theta0": 0.85, "thetaX": 0.85 }
- *       ]
+ *       ],
+ *       // 可选：给出 TTM EPS 时，额外输出"内在 TTM PE"列（= 对应股价 ÷ TTM EPS）
+ *       "epsTtm": 1.9408
  *     }
  *   ]
  * }
@@ -200,9 +202,13 @@ function renderThetaTable(table, macro) {
 
 /** 渲染一张增速情景表（固定 θ、变增速；行内可覆盖 θ） */
 function renderGrowthTable(table, macro) {
-  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 7, epsLabel = '2026E EPS' } = table;
-  const header = `| 三年增速（归母口径） | ${epsLabel} | 内在 PE | 对应股价 | 相对现价 ${currentPrice} 元 |`;
-  const sep = `| --- | ---: | ---: | ---: | ---: |`;
+  const { title, theta0, thetaX, currentPrice, rows, transitionYears = 7, epsLabel = '2026E EPS', epsTtm } = table;
+  const showTtm = Number.isFinite(epsTtm) && epsTtm > 0;
+  // 内在 TTM PE = 该情景对应股价 ÷ TTM EPS（同一估值换分母，不是新增假设）
+  const ttmHead = showTtm ? ' 内在 TTM PE |' : '';
+  const ttmSep = showTtm ? ' ---: |' : '';
+  const header = `| 三年增速（归母口径） | ${epsLabel} | 内在 PE |${ttmHead} 对应股价 | 相对现价 ${currentPrice} 元 |`;
+  const sep = `| --- | ---: | ---: |${ttmSep} ---: | ---: |`;
   const fmtG = (x) => `${(x * 100).toFixed(1).replace(/\.0$/, '')}%`;
   const body = rows
     .map((r) => {
@@ -221,7 +227,8 @@ function renderGrowthTable(table, macro) {
       const g = r.growthForecasts.map(fmtG).join(', ');
       // 行名已自带增速（如 "[6.3%, 13.5%, 14.3%]（基准）"）时不再重复追加
       const label = r.name.includes('[') ? r.name : `${r.name}（[${g}]）`;
-      return `| ${label} | ${r.eps} | ${pe.toFixed(1)}x | ~${Math.round(price)} 元 | ${relStr} |`;
+      const ttmCell = showTtm ? ` ${(price / epsTtm).toFixed(1)}x |` : '';
+      return `| ${label} | ${r.eps} | ${pe.toFixed(1)}x |${ttmCell} ~${Math.round(price)} 元 | ${relStr} |`;
     })
     .join('\n');
   return `**${title}**\n\n${header}\n${sep}\n${body}`;
