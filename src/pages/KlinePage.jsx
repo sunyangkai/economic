@@ -14,6 +14,12 @@ const PRESETS = [
 const COUNT_OPTIONS = [120, 250, 320, 500, 800];
 /** 默认只勾选 20 日线；其余周期按需在均线按钮上叠加 */
 const DEFAULT_MA = [20];
+/** K 线样式：空心（默认，只描边）/ 实心（填充色块） */
+const CANDLE_STYLES = [
+  { key: 'hollow', label: '空心' },
+  { key: 'solid', label: '实心' },
+];
+const STYLE_STORAGE_KEY = 'kline-web:candle-style';
 const STORAGE_KEY = 'kline-web:last-input';
 /** 分钟线接口实测单次最多返回约 320 条 */
 const MINUTE_MAX_COUNT = 320;
@@ -23,6 +29,9 @@ export default function App() {
   const [period, setPeriod] = useState('day');
   const [adjust, setAdjust] = useState('qfq');
   const [maPeriods, setMaPeriods] = useState(DEFAULT_MA);
+  const [candleStyle, setCandleStyle] = useState(
+    () => localStorage.getItem(STYLE_STORAGE_KEY) || 'hollow',
+  );
   const [count, setCount] = useState(320);
 
   const [data, setData] = useState(null);
@@ -84,6 +93,11 @@ export default function App() {
   const pickPreset = (code) => {
     setInput(code);
     load(code);
+  };
+
+  const pickCandleStyle = (key) => {
+    setCandleStyle(key);
+    localStorage.setItem(STYLE_STORAGE_KEY, key);
   };
 
   const toggleMa = (n) => {
@@ -188,6 +202,22 @@ export default function App() {
         </div>
 
         <div className="field">
+          <span className="label">K线</span>
+          <div className="segmented">
+            {CANDLE_STYLES.map((s) => (
+              <button
+                key={s.key}
+                type="button"
+                className={s.key === candleStyle ? 'seg active' : 'seg'}
+                onClick={() => pickCandleStyle(s.key)}
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="field">
           <label htmlFor="count">条数</label>
           <select id="count" value={count} onChange={(e) => setCount(Number(e.target.value))}>
             {COUNT_OPTIONS.map((n) => (
@@ -250,6 +280,7 @@ export default function App() {
             title={chartTitle}
             maPeriods={maPeriods}
             periodLabel={subtitle}
+            hollow={candleStyle === 'hollow'}
           />
         ) : (
           !loading && !error && <div className="empty">输入代码后点击「查询」</div>

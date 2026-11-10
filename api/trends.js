@@ -37,6 +37,7 @@ export const INDEX_OPTIONS = [
   { key: 'sh', label: '上证指数', secid: '1.000001', aggregate: false },
   { key: 'sz', label: '深证成指', secid: '0.399001', aggregate: false },
   { key: 'szzz', label: '深证综指', secid: '0.399106', aggregate: false },
+  { key: 'sz50', label: '上证50', secid: '1.000016', aggregate: false },
   { key: 'cyb', label: '创业板指', secid: '0.399006', aggregate: false },
   { key: 'hs300', label: '沪深300', secid: '1.000300', aggregate: false },
   { key: 'zz1000', label: '中证1000', secid: '1.000852', aggregate: false },

@@ -71,8 +71,9 @@ const PAN_MAX_RATIO = 0.25;
  * @param {string} props.title 图表标题（证券名 + 代码）
  * @param {number[]} props.maPeriods 要绘制的均线周期（默认 [20]）
  * @param {string} [props.periodLabel] 周期标签，用于副标题
+ * @param {boolean} [props.hollow=true] K 线是否空心（true = 只描边不填充；false = 实心柱）
  */
-export default function KlineChart({ candles, title, maPeriods, periodLabel }) {
+export default function KlineChart({ candles, title, maPeriods, periodLabel, hollow = true }) {
   const containerRef = useRef(null);
   const chartRef = useRef(null);
   /** 当前视窗 [start, end]（百分比）的镜像；重绘时重置，用户缩放时由 datazoom 事件刷新 */
@@ -350,10 +351,17 @@ export default function KlineChart({ candles, title, maPeriods, periodLabel }) {
           yAxisIndex: 0,
           data: ohlc,
           itemStyle: {
-            color: UP,
-            color0: DOWN,
-            borderColor: UP_BORDER,
-            borderColor0: DOWN_BORDER,
+            /**
+             * 空心 K 线：填充色给 'transparent'，只靠 borderColor 描边。
+             * 实心则用正/负两档填充色（涨红跌绿）。
+             * ECharts 的 candlestick 里 color/color0 管阳线/阴线的**填充**，
+             * borderColor/borderColor0 管描边；borderWidth 调粗一点空心线才看得清。
+             */
+            color: hollow ? 'transparent' : UP,
+            color0: hollow ? 'transparent' : DOWN,
+            borderColor: hollow ? UP : UP_BORDER,
+            borderColor0: hollow ? DOWN : DOWN_BORDER,
+            borderWidth: hollow ? 1.5 : 1,
           },
           // 主图极值标注（ECharts 官方 K 线示例同款写法）
           markPoint: {
@@ -371,7 +379,7 @@ export default function KlineChart({ candles, title, maPeriods, periodLabel }) {
     };
 
     chart.setOption(option, true);
-  }, [candles, title, maPeriods, periodLabel]);
+  }, [candles, title, maPeriods, periodLabel, hollow]);
 
   // aria-label 同时承担无障碍说明与"当前图表口径"的可读描述
   return (

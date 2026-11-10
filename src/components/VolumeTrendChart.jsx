@@ -270,19 +270,18 @@ export default function VolumeTrendChart({ rows, metric, summary, title }) {
               }]),
             ],
           },
+          /**
+           * 今日曲线末端只留一个圆点，不挂文字标签：
+           * 数值已由「此刻」竖线 + 上方指标卡表达，重复标注只会挡住曲线。
+           * ⚠ 用 coord 定位的 markPoint，label formatter 里的 p.value 是 [时间, 值] 数组，
+           *   照抄成 fmt(p.value) 会被 Number() 转成 NaN → 渲染成占位符「—」（2026-11-10 修过）。
+           */
           markPoint: lastIdx < 0 ? undefined : {
             symbol: 'circle',
             symbolSize: 7,
+            silent: true,
             itemStyle: { color: ACCENT, borderColor: '#0e1116', borderWidth: 2 },
-            label: {
-              show: true,
-              position: 'left',
-              fontSize: 10,
-              color: '#cfe0ff',
-              backgroundColor: 'rgba(22,27,34,0.9)',
-              padding: [2, 4],
-              formatter: (p) => fmt(p.value),
-            },
+            label: { show: false },
             data: [{ coord: [times[lastIdx], cumToday[lastIdx]] }],
           },
         },

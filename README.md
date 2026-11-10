@@ -10,7 +10,7 @@
 
 | 位置 | 内容 |
 | --- | --- |
-| `src/pages/KlinePage.jsx` | K 线行情页主界面（周期 / 复权 / 均线（默认仅 20 日线）/ 预设标的；副图仅成交量） |
+| `src/pages/KlinePage.jsx` | K 线行情页主界面（周期 / 复权 / 均线（默认仅 20 日线）/ K 线空心·实心（默认空心，选择记入 localStorage）/ 预设标的；副图仅成交量） |
 | `src/pages/VolumeComparePage.jsx` | 大盘分时量能对比页（昨日 vs 今日逐分钟成交量 / 成交额，含同期差与按昨日节奏外推的全天量） |
 | `src/components/KlineChart.jsx` | ECharts 图表组件（深色主题：轴 / 网格 / tooltip / 滑块按深底配色） |
 | `src/components/VolumeTrendChart.jsx` | 量能对比图（上格两日累计曲线 + 下格每分钟量柱，深色主题） |
@@ -37,7 +37,7 @@ npm run preview   # 生产模式预览，端口 5181
 | --- | --- |
 | `/` 或 `#/kline` | K 线行情 |
 | `#/volume` | 大盘分时量能对比（取上次选择的指数） |
-| `#/volume/<key>` | 直达指定指数：`sh` `sz` `szzz` `cyb` `hs300` `zz1000` `kc50` `bj50` `all`（沪深两市合计） |
+| `#/volume/<key>` | 直达指定指数：`sh` `sz` `szzz` `sz50` `cyb` `hs300` `zz1000` `kc50` `bj50` `all`（沪深两市合计） |
 
 **图表手势（macOS 触控板）**
 

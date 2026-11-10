@@ -54,7 +54,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: 14px 18px;
+  /* 2026-11-10：多了「K线」样式开关后原间距放不下，收紧为 14px 保证单行排布 */
+  gap: 14px 14px;
   padding: 14px 16px;
   background: var(--c-card);
   border: 1px solid var(--c-border);
@@ -67,7 +68,7 @@ body {
   gap: 6px;
 }
 
-.field-code { min-width: 220px; }
+.field-code { min-width: 200px; }
 
 .field .label,
 .field label {
@@ -125,7 +126,7 @@ body {
 }
 
 .segmented .seg {
-  padding: 6px 11px;
+  padding: 6px 9px;
   font-size: 13px;
   color: var(--c-text-2);
   background: var(--c-elevated);
