@@ -266,3 +266,107 @@ body {
   .kline-canvas, .empty { height: 460px; }
   .toolbar { gap: 12px; }
 }
+/* ── 顶部导航（两个页面共用） ────────────────────────── */
+.app-nav {
+  display: flex;
+  gap: 4px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 20px 0;
+}
+
+.app-nav a {
+  padding: 7px 14px;
+  font-size: 13px;
+  color: var(--c-text-2);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: color .12s, background .12s, border-color .12s;
+}
+
+.app-nav a:hover { color: var(--c-text); background: var(--c-elevated); }
+.app-nav a.active {
+  color: var(--c-accent);
+  background: rgba(76, 141, 255, .1);
+  border-color: rgba(76, 141, 255, .35);
+}
+
+.toolbar-note {
+  font-size: 12px;
+  color: var(--c-text-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ── 分时量能对比页 ─────────────────────────────────── */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stat-card {
+  padding: 12px 14px;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--c-text-3);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.stat-note {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--c-text-2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.pace-banner {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--c-text-2);
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-text-3);
+  border-radius: 8px;
+}
+
+.pace-banner.up { border-left-color: var(--c-up); }
+.pace-banner.down { border-left-color: var(--c-down); }
+.pace-banner b {
+  color: var(--c-text);
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.pace-banner-note {
+  margin-left: 10px;
+  font-size: 12px;
+  color: var(--c-text-3);
+}
+
+.volume-canvas {
+  width: 100%;
+  height: 620px;
+}
+
+@media (max-width: 900px) {
+  .volume-canvas { height: 480px; }
+  .stat-value { font-size: 18px; }
+}

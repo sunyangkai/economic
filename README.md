@@ -11,11 +11,15 @@
 | 位置 | 内容 |
 | --- | --- |
 | `src/pages/KlinePage.jsx` | K 线行情页主界面（周期 / 复权 / 均线（默认仅 20 日线）/ 预设标的；副图仅成交量） |
+| `src/pages/VolumeComparePage.jsx` | 大盘分时量能对比页（昨日 vs 今日逐分钟成交量 / 成交额，含同期差与按昨日节奏外推的全天量） |
 | `src/components/KlineChart.jsx` | ECharts 图表组件（深色主题：轴 / 网格 / tooltip / 滑块按深底配色） |
+| `src/components/VolumeTrendChart.jsx` | 量能对比图（上格两日累计曲线 + 下格每分钟量柱，深色主题） |
 | `src/utils/` | `format.js` 数据格式化、`indicator.js` 技术指标（MA / MACD / RSI） |
 | `src/styles.css` | 页面深色主题色板（`color-scheme: dark`，变量集中在 `:root`） |
 | `public/` | `index.html` 模板（内联深色背景 + `theme-color`，避免首屏白闪）、`favicon.svg`（深色图标） |
 | `api/kline.js` | K 线数据接口（腾讯行情：日 / 周 / 月线、分钟线、实时快照），浏览器可直连 |
+| `api/trends.js` | 大盘分时接口（东财 push2his：多日逐分钟价 / 量 / 额，含「沪深两市」多指数求和），浏览器可直连 |
+| `tools/volumeCompare.js` | 分时量能对比纯计算（两日对齐、累计曲线、同期差、按昨日节奏外推全天） |
 | `scripts/stockScreener.js` | 命令行选股器（市值 + 营收同比筛选，导出 CSV），`node scripts/stockScreener.js --help` |
 | `webpack.config.js` | 构建配置（devServer 端口 5180，输出 `dist/`） |
 
@@ -26,6 +30,14 @@ npm run dev       # 开发服务器，http://127.0.0.1:5180
 npm run build     # 生产构建到 dist/
 npm run preview   # 生产模式预览，端口 5181
 ```
+
+页面路由（hash）：
+
+| 地址 | 页面 |
+| --- | --- |
+| `/` 或 `#/kline` | K 线行情 |
+| `#/volume` | 大盘分时量能对比（取上次选择的指数） |
+| `#/volume/<key>` | 直达指定指数：`sh` `sz` `szzz` `cyb` `hs300` `zz1000` `kc50` `bj50` `all`（沪深两市合计） |
 
 **图表手势（macOS 触控板）**
 
