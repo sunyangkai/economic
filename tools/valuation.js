@@ -9,6 +9,11 @@
  * 估值口径：前 N 年按逐年可分配利润 DP_t = NP_t − (E_t − P_t) 折现，
  * 永续期按 DP_{N+1} = NP_{N+1} × θₓ 折现——θ 只作用于永续期。
  *
+ * ⚠ 归母口径：DP 的分子是 NP_adj（归母），因此
+ *   ① θₓ 的分母必须用 ROIC_own = NP_adj / [(IC − D) × q]，**不是报表 NOPAT/(NFA+WC)**；
+ *   ② 合并口径的 capex/da/deltaWc 与 availableFunds 按 capitalShare(q) 折为归母。
+ *   见 doc/估值理论/估值模型.md §4.2 硬约束③④、§4.3.1。q 缺省 1（无少数股东）时行为与旧版一致。
+ *
  * ── CLI 用法 ────────────────────────────────────────────────────────
  *   node tools/valuation.js --help                # 用法说明
  *   node tools/valuation.js <spec.json>           # 输出 markdown 情景表
@@ -17,6 +22,7 @@
  * spec.json 格式：
  * {
  *   "macro": { "rf": 0.0165, "nominalGdpGrowth": 4 },   // 可选，默认 rf 0.0165 / ERP 0.068
+ *   "capitalShare": 0.75,                   // 可选：权益份额 q，把合并口径 E 与 F 折为归母；缺省 1
  *   "tables": [
  *     {
  *       "kind": "theta",                        // θₓ 情景表：固定增速与资本开支，变稳态 ROIC
@@ -90,8 +96,8 @@ function buildProfitPath({ growthForecasts, gInfinity, transitionYears, np0 = 1 
   return np; // np[0..N]
 }
 
-/** 解析扩张期逐年 E（长度 N），三种给法任选其一 */
-function buildExpansionSpend({ company, np, N }) {
+/** 解析扩张期逐年 E（长度 N），三种给法任选其一；capex/da/deltaWc 为合并口径时按 capitalShare 折归母 */
+function buildExpansionSpend({ company, np, N, capitalShare }) {
   const { expansionSpend, capex, da, deltaWc, roic } = company || {};
   const checkLen = (arr, name) => {
     if (!Array.isArray(arr)) throw new Error(`${name} 必须是数组`);
@@ -110,7 +116,8 @@ function buildExpansionSpend({ company, np, N }) {
     checkLen(capex, 'company.capex');
     checkLen(da, 'company.da');
     checkLen(deltaWc, 'company.deltaWc');
-    return capex.map((c, i) => c - da[i] + deltaWc[i]); // MC ≡ DA
+    // MC ≡ DA；三列输入按合并口径给，乘 q 折为归母（§4.2 硬约束③）
+    return capex.map((c, i) => (c - da[i] + deltaWc[i]) * capitalShare);
   }
 
   // 兜底：E_t = ΔNP_t / ROIC，等价于 g_t × IC_{t-1}（roic 已在主函数校验）
@@ -128,9 +135,12 @@ function buildExpansionSpend({ company, np, N }) {
  * @param {number[]} [params.company.capex] - 逐年 capex（与 da、deltaWc 同用）
  * @param {number[]} [params.company.da] - 逐年折旧摊销
  * @param {number[]} [params.company.deltaWc] - 逐年营运资本增量
- * @param {number} params.company.roic - 稳态 ROIC（必填）：解出 θₓ = 1 − g∞/ROIC；无 capex 规划时兜底算 E
+ * @param {number} params.company.roic - 稳态 ROIC_own（必填）：NP_adj / [(IC − D) × q]，⚠不是报表 NOPAT/(NFA+WC)；
+ *   解出 θₓ = 1 − g∞/ROIC_own；无 capex 规划时兜底算 E。口径见 doc/估值理论/估值模型.md §4.3.1
+ * @param {number} [params.company.capitalShare=1] - 权益份额 q（归母所有者权益 ÷ 所有者权益合计）：
+ *   把合并口径的 capex/da/deltaWc 与 availableFunds 折为归母；缺省 1 表示无少数股东
  * @param {number} [params.company.np0=1] - 基年利润（与 capex/F 同单位）；缺省 1 表示按"单位利润"标准化
- * @param {number} [params.company.availableFunds=0] - 可供发展资金 F（C₀），与 np0 同单位
+ * @param {number} [params.company.availableFunds=0] - 可供发展资金 F（合并口径，C₀），与 np0 同单位；内部乘 q
  * @param {Object} params.macro
  * @param {number} params.macro.rf
  * @param {number} params.macro.nominalGdpGrowth
@@ -139,7 +149,7 @@ function buildExpansionSpend({ company, np, N }) {
  * @returns {Object} { pe, pvExpansion, pvTerminal, thetaX, R, gInfinity, npPath, ePath, dpPath, cashPath }
  */
 export function calculateValuation({ company = {}, macro = {} } = {}) {
-  const { growthForecasts, transitionYears = 7, availableFunds = 0, roic, np0 = 1 } = company;
+  const { growthForecasts, transitionYears = 7, availableFunds = 0, roic, np0 = 1, capitalShare = 1 } = company;
 
   const {
     rf,
@@ -147,7 +157,7 @@ export function calculateValuation({ company = {}, macro = {} } = {}) {
     equityRiskPremium = 0.068,
   } = { ...DEFAULT_MACRO, ...macro };
 
-  for (const [key, value] of Object.entries({ rf, nominalGdpGrowth, equityRiskPremium, transitionYears, availableFunds, np0 })) {
+  for (const [key, value] of Object.entries({ rf, nominalGdpGrowth, equityRiskPremium, transitionYears, availableFunds, np0, capitalShare })) {
     if (!isNum(value)) throw new Error(`${key} 必须是有限数字`);
   }
   if (np0 <= 0) throw new Error('np0（基年利润）必须为正数');
@@ -155,26 +165,31 @@ export function calculateValuation({ company = {}, macro = {} } = {}) {
     throw new Error('transitionYears 必须是大于等于 0 的整数');
   }
   if (availableFunds < 0) throw new Error('availableFunds（F）不能为负');
+  if (!(capitalShare > 0 && capitalShare <= 1)) {
+    throw new Error('capitalShare（q＝归母所有者权益 ÷ 所有者权益合计）必须在 (0, 1] 区间');
+  }
 
   const R = rf + equityRiskPremium;
   const gInfinity = (0.35 * nominalGdpGrowth / (1 + 0.35 * nominalGdpGrowth)) * 0.04;
   if (R <= gInfinity) throw new Error('折现率 R 必须大于终局增速 g∞');
 
-  // 稳态 ROIC：必填，既是 θₓ 的唯一来源，也是无 capex 规划时 E 的兜底
+  // 稳态 ROIC_own：必填，既是 θₓ 的唯一来源，也是无 capex 规划时 E 的兜底
+  // ⚠ 口径：NP_adj / [(IC − D) × q]，不是报表的 NOPAT/(NFA+WC)——见 §4.3.1
   if (!isNum(roic) || roic <= 0) {
-    throw new Error('company.roic 必填且须为正数：θₓ = 1 − g∞/ROIC');
+    throw new Error('company.roic 必填且须为正数：θₓ = 1 − g∞/ROIC_own（归母应占口径，见 §4.3.1）');
   }
   if (roic <= gInfinity) {
-    throw new Error(`ROIC（${roic}）必须大于 g∞（${gInfinity.toFixed(4)}），否则 θₓ ≤ 0`);
+    throw new Error(`ROIC_own（${roic}）必须大于 g∞（${gInfinity.toFixed(4)}），否则 θₓ ≤ 0`);
   }
   const theta = 1 - gInfinity / roic;
 
   const N = 3 + transitionYears;
   const np = buildProfitPath({ growthForecasts, gInfinity, transitionYears, np0 });
-  const ePath = buildExpansionSpend({ company, np, N });
+  const ePath = buildExpansionSpend({ company, np, N, capitalShare });
 
   // 扩张期：逐年可分配利润 DP_t = NP_t − (E_t − P_t)，P_t = min(E_t, C_t)
-  const cashPath = [availableFunds];
+  // F 与 E 同用 q 折算，否则只折 E 不折 F 会高估（§4.2 硬约束④）
+  const cashPath = [availableFunds * capitalShare];
   const dpPath = [];
   let pvExpansion = 0;
 
@@ -221,6 +236,7 @@ function mergeCompany(table, row) {
     'deltaWc',
     'roic',
     'availableFunds',
+    'capitalShare',
   ]) {
     if (row[key] !== undefined) picked[key] = row[key];
     else if (table[key] !== undefined) picked[key] = table[key];
@@ -228,10 +244,10 @@ function mergeCompany(table, row) {
   return picked;
 }
 
-/** 渲染 θₓ 情景表（固定增速与资本开支，变稳态 ROIC；θₓ 由 ROIC 解出） */
+/** 渲染 θₓ 情景表（固定增速与资本开支，变稳态 ROIC_own；θₓ 由它解出） */
 function renderThetaTable(table, macro) {
   const { title, eps, rows } = table;
-  const header = `| 情景 | 稳态 ROIC | θₓ | 内在 PE | 对应股价（基准年 EPS ${eps}） |`;
+  const header = `| 情景 | 稳态 $ROIC_{own}$ | θₓ | 内在 PE | 对应股价（基准年 EPS ${eps}） |`;
   const sep = `| --- | ---: | ---: | ---: | ---: |`;
   const body = rows
     .map((r) => {
@@ -272,7 +288,11 @@ function renderGrowthTable(table, macro) {
 /** 根据 spec 渲染全部情景表（返回 markdown 文本） */
 export function renderScenarioTables(spec) {
   const macro = { ...DEFAULT_MACRO, ...(spec.macro || {}) };
-  return (spec.tables || [])
+  // 顶层 capitalShare（权益份额 q）注入每张表，行内可再覆盖
+  const tables = (spec.capitalShare !== undefined
+    ? (spec.tables || []).map((t) => ({ capitalShare: spec.capitalShare, ...t }))
+    : spec.tables || []);
+  return tables
     .map((t) => (t.kind === 'theta' ? renderThetaTable(t, macro) : renderGrowthTable(t, macro)))
     .join('\n\n---\n\n');
 }
@@ -283,8 +303,10 @@ const USAGE = `用法:
   node tools/valuation.js               # 运行内置示例
 
 模型：前 N 年（3 明确 + 7 过渡）按 DP_t = NP_t − (E_t − P_t) 折现，永续期按 DP_{N+1} = NP_{N+1} × θₓ 折现。
-company.roic 必填（θₓ = 1 − g∞/ROIC，无 capex 规划时也是 E 的兜底）。
+company.roic 必填，口径为 ROIC_own = NP_adj / [(IC − D) × q]，⚠不是报表的 NOPAT/(NFA+WC)（见 doc/估值理论/估值模型.md §4.3.1）。
+  θₓ = 1 − g∞/ROIC_own；无 capex 规划时也是 E 的兜底。
 扩张期 E_t 优先用 capex+da+deltaWc，其次 expansionSpend，最后 roic 兜底。
+company.capitalShare 为权益份额 q（归母权益 ÷ 所有者权益合计），默认 1；用于把合并口径的 capex/da/deltaWc 与 F 折为归母。
 tables 支持 kind="theta"（固定增速与 capex、变 ROIC）与 kind="growth"（固定 ROIC 与 capex、变增速）。`;
 
 /** CLI 入口：直接执行本文件时运行（import 时不执行） */
