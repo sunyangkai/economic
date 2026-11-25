@@ -1,0 +1,241 @@
+{
+  "title": "工程机械海外销量：单月同比 vs 两年 CAGR（剔除基数）",
+  "subtitle": "数据口径：CCMA 工程机械协会快报一（挖机 / 装载机出口台数）｜2026 年 1—10 月，同比为协会披露值，两年 CAGR 由 2025 年官方同比反推 2024 基数｜2026-11-25 整理",
+  "width": 1500,
+  "height": 1180,
+  "scale": 2,
+  "output": "doc/知识库/行业/工程机械/图表/图片/2026年海外销量基数拆解.png",
+  "theme": {
+    "colors": [
+      "#2c6fbb",
+      "#e0a32e",
+      "#c0392b",
+      "#1a7f5a"
+    ],
+    "background": "#ffffff"
+  },
+  "panels": [
+    {
+      "title": "① 挖掘机出口：单月同比 vs 两年 CAGR",
+      "categories": [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月"
+      ],
+      "yLabel": "同比 %",
+      "valueFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 0
+      },
+      "labelFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 1
+      },
+      "series": [
+        {
+          "name": "单月同比",
+          "type": "bar",
+          "color": "#2c6fbb",
+          "data": [
+            40.5,
+            37.23,
+            32.05,
+            23.24,
+            34.21,
+            36.36,
+            21.2,
+            32.72,
+            20.7,
+            11.38
+          ]
+        },
+        {
+          "name": "两年 CAGR",
+          "type": "bar",
+          "color": "#e0a32e",
+          "data": [
+            19.82,
+            24.36,
+            16.55,
+            21.27,
+            18.95,
+            27.55,
+            26.44,
+            21.43,
+            24.78,
+            12.14
+          ]
+        }
+      ],
+      "markLine": [
+        {
+          "y": 10,
+          "color": "#c0392b",
+          "position": "insideStartTop"
+        }
+      ],
+      "markArea": [
+        {
+          "from": "7月",
+          "to": "10月",
+          "color": "rgba(192,57,43,.05)"
+        }
+      ]
+    },
+    {
+      "title": "② 装载机出口：单月同比 vs 两年 CAGR",
+      "categories": [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月"
+      ],
+      "yLabel": "同比 %",
+      "valueFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 0
+      },
+      "labelFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 1
+      },
+      "series": [
+        {
+          "name": "单月同比",
+          "type": "bar",
+          "color": "#2c6fbb",
+          "data": [
+            53.44,
+            34.37,
+            30.54,
+            57.35,
+            33.1,
+            33.36,
+            34.89,
+            15.97,
+            21.3,
+            12.21
+          ]
+        },
+        {
+          "name": "两年 CAGR",
+          "type": "bar",
+          "color": "#e0a32e",
+          "data": [
+            26.23,
+            23.33,
+            14.8,
+            25.33,
+            13.45,
+            20.63,
+            23.46,
+            12.27,
+            28.11,
+            17.29
+          ]
+        }
+      ],
+      "markLine": [
+        {
+          "y": 10,
+          "color": "#c0392b",
+          "position": "insideStartTop"
+        }
+      ],
+      "markArea": [
+        {
+          "from": "7月",
+          "to": "10月",
+          "color": "rgba(192,57,43,.05)"
+        }
+      ]
+    },
+    {
+      "title": "③ 海关口径出口额：全品类，美元 / 人民币双口径同比",
+      "categories": [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月"
+      ],
+      "yLabel": "同比 %",
+      "valueFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 0
+      },
+      "labelFormat": {
+        "suffix": "%",
+        "showSign": true,
+        "decimals": 0
+      },
+      "series": [
+        {
+          "name": "美元口径",
+          "type": "bar",
+          "color": "#1a7f5a",
+          "data": [
+            17.5,
+            56.3,
+            9.54,
+            12.0,
+            20.8,
+            25.5,
+            18.3,
+            18.6,
+            31.9,
+            29.7
+          ]
+        },
+        {
+          "name": "人民币口径",
+          "type": "bar",
+          "color": "#7f8c8d",
+          "data": [
+            15.4,
+            52.1,
+            6.29,
+            7.89,
+            15.5,
+            19.3,
+            12.6,
+            12.5,
+            25.4,
+            23.4
+          ]
+        }
+      ],
+      "markArea": [
+        {
+          "from": "7月",
+          "to": "10月",
+          "color": "rgba(192,57,43,.05)",
+          "label": "7—10 月：台数降速、金额未降"
+        }
+      ]
+    }
+  ]
+}
