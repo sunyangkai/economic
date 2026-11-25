@@ -36,6 +36,12 @@
   - `node tools/swIndustry.js --new <公司>` 打印新公司该建的三处目录路径；
   - 新增公司 / 申万调整分类时：只改 `doc/研报/industry-map.json`，再跑 `--check` 对齐，不在正文里手工判断行业。
 - **不产出网页研报**（2026-09-10 起废弃）：`tools/md2html.js` 与 `doc/网页研报/` 已整体删除，禁止重新生成 HTML 版研报、禁止重建 `doc/网页研报/`；报告一律以 markdown 交付（`doc/研报/`）。
+- **研报图表统一用 `tools/chart.js`**（纯计算，不取外部数据）：
+  - `npm run chart -- <spec.json>` 出图，`--scale N` 覆盖倍率；`node tools/chart.js --help` 看用法；**只出 PNG，不产出 SVG**；
+  - 管线是 `spec JSON → ECharts SSR（SVG）→ resvg → PNG`，**纯 Node，不需要 Python / 浏览器 / matplotlib**；中文与负号服务端直接渲染正确；
+  - **数据与图片分开存**：spec（数据源）放 `doc/知识库/行业/<行业>/图表/数据/<图名>.spec.json`，成品放 `doc/知识库/行业/<行业>/图表/图片/<图名>.png`；图必须可从 spec 复现，禁止只存图不存 spec；
+  - **一切带坐标轴、带数值的图必须用本工具，不用 AI 生图**——AI 生成图会编造数值，只可做插画封面（`generate_image`），不得进研报；
+  - 三条已踩坑并内置的纪律：负值柱标签逐点定位、y 轴范围交给 ECharts（勿手写 `yMin/yMax` 破坏其整数刻度算法）、布局用像素而非 CSS `calc()`（ECharts title/legend 不认）。
 - **分析观点纪律**：任何分析观点（管理层观点、增长判断、风险判断、估值假设）**以财报/官方报告原文为基准**；券商研报、媒体点评等二手分析只作参考与交叉验证，不作为观点基准；官方与二手冲突时以官方为准并说明差异（详见研报模板 README"分析观点纪律"）。
 - 边界：`api/` = 数据获取（外部数据源），`tools/` = 计算与工具函数，不要把估值计算写进 `api/`。
 

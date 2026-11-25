@@ -76,6 +76,54 @@ doc/研报/README.md             ← 申万分类索引 + 覆盖地图
 | 目录 | 职责 | 说明 |
 | --- | --- | --- |
 | `api/` | 数据获取（外部数据源） | 东方财富 datacenter、腾讯行情等封装；报告取数、页面行情同源 |
-| `tools/` | 纯计算 / 工具函数 | `valuation.js` 估值 CLI、`pdf2text.js` PDF 提取、`swIndustry.js` 分类校验 |
+| `tools/` | 纯计算 / 工具函数 | `valuation.js` 估值 CLI、`pdf2text.js` PDF 提取、`swIndustry.js` 分类校验、`chart.js` 研报图表生成 |
 
 边界：`api/` = 取外部数据，`tools/` = 纯计算；估值计算不写进 `api/`。项目约定全文见 `AGENTS.md`。
+
+### 研报图表生成（`tools/chart.js`）
+
+**一切带坐标轴、带数值的图必须用本工具画，不用 AI 生图**——AI 生成图会编造数值，只能做插画封面。
+
+```
+npm run chart -- <spec.json>          # 按 spec 出图（输出路径见 spec.output）
+npm run chart -- <spec.json> --svg    # 另存同名 .svg（矢量，可无损缩放）
+```
+
+管线是 `spec JSON → ECharts SSR（SVG）→ resvg 光栅化 → PNG`，**纯 Node**，不需要 Python / 浏览器。
+**数据与图片分两个目录放**，数据改了改 spec 重跑即可，图永远可复现：
+
+```
+doc/知识库/行业/<行业>/图表/数据/<图名>.spec.json   ← spec（数据源）
+doc/知识库/行业/<行业>/图表/图片/<图名>.png          ← 成品（只出 PNG，不产 SVG）
+```
+
+spec 的 `"output"` 字段指向 `图表/图片/`。
+
+spec 结构（`panels[]` 每项 = 一个子图，多子图自动均分纵向空间）：
+
+```json
+{
+  "title": "总标题", "subtitle": "数据口径 / 来源",
+  "width": 1500, "height": 980, "scale": 2,
+  "output": "doc/知识库/行业/<行业>/图表/图片/<图名>.png",
+  "panels": [{
+    "title": "① 挖掘机单月销量同比",
+    "categories": ["1月", "2月"],
+    "yLabel": "同比 %",
+    "valueFormat": { "suffix": "%", "showSign": true, "decimals": 0 },
+    "labelFormat": { "suffix": "%", "showSign": true, "decimals": 1 },
+    "series": [
+      { "name": "国内销量", "type": "line", "data": [61.4, -42.0] },
+      { "name": "出口销量", "type": "bar", "data": [40.5, 37.2] }
+    ],
+    "markArea": [{ "from": "7月", "to": "10月", "label": "7—10 月掉档" }],
+    "markLine": [{ "y": 10, "label": "证伪阈值 10%", "color": "#c0392b" }]
+  }]
+}
+```
+
+三条已踩过坑的纪律，工具已内置：
+
+1. **负值柱的标签逐点定位**——整条 series 设 `position:'top'` 时负值标签会压在 y=0 轴上，工具改按符号逐点给 `top`/`bottom`；
+2. **y 轴范围交给 ECharts 自动算**——手写 `yMin/yMax` 会破坏它的整数刻度算法（产出 -54%/+74% 这类刻度）；确需固定时再显式给；
+3. **布局用像素、不用 CSS `calc()`**——ECharts 的 title / legend 不认 `calc()`，混用会让子图标题全部回落到顶部。
